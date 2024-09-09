@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* @layer base{
+  section{
+      @apply mt-[250px]
+  }
+} */
+
+@layer components{
+  .btn{
+    @apply border border-white hover:border-white transform  bg-secondaryColor  hover:text-white text-white font-semibold px-4 py-2  text-xs sm:text-sm rounded-full
+    }
+  .para{
+      @apply text-textColor leading-5 text-start text-xs sm:text-sm  mb-4
+    }
+    .heading{
+      @apply text-3xl md:text-5xl font-bold text-headingColor
+    }
+    .highlight{
+      @apply transform hover:scale-110 duration-1000
+    }
+}

@@ -1,0 +1,26 @@
+@keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .scroll-container {
+    width: 80%; 
+    overflow: hidden;
+    position: relative;
+    /* background-color: #ffff;  */
+    border-left: 1px solid #000; 
+    padding: 10px; 
+  }
+  
+  
+  .scroll-news {
+    display: inline-block;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: scroll 10s linear infinite; 
+  }
+  
