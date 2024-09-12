@@ -28,7 +28,7 @@ function Home() {
     //    transition={{ duration: .5, ease: "easeInOut" }}
       className=''>
       
-        <img src={kimsatImage} alt="KIMSAT Hospital Building" className="mx-auto  w-[90%] sm:w-[950px] mb-8"/>
+        <img src={kimsatImage} alt="KIMSAT Hospital Building" className="mx-auto scale-animation  w-[90%] sm:w-[950px] mb-8"/>
         {/* <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-80 "></div>  */}
         </motion.div>
         <motion.div

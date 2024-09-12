@@ -73,6 +73,8 @@ export default function OtpComponent({ otp, setOtp }) {
         otp: otp.join(""),
       })
       if(otpResponse.data){
+        setShowOTP(false)
+        
         console.log(otpResponse.data,'dattta from api')
       }
     } catch (error) {
@@ -96,7 +98,7 @@ export default function OtpComponent({ otp, setOtp }) {
                 onFocus={handleFocus}
                 onPaste={handlePaste}
                 ref={(el) => (inputRefs.current[index] = el)}
-                className="shadow-xs flex w-[64px] items-center text-textColor justify-center rounded-lg border border-stroke bg-white p-2 text-center text-lg font-medium text-gray-5 outline-none sm:text-4xl dark:border-dark-3 dark:bg-white/5"
+                className="shadow-xs flex w-[64px] items-center text-textColor justify-center rounded-lg border border-stroke bg-white p-2 text-center text-sm font-[300] text-gray-5 outline-none sm:text-lg dark:border-dark-3 dark:bg-white/5"
               />
             ))}
           </div>

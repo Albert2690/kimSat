@@ -2,6 +2,7 @@ import {createContext,useState} from 'react'
 import UserRouter from '../Routes/UserRouter'
 import UserHeader from '../Components/Header/UserHeader'
 import UserFooter from '../Components/Footer/UserFooter'
+import Loader from '../Components/Loader/Loader'
 
 
 export const  BookingContext = createContext()
@@ -18,8 +19,8 @@ const [showOTP,setShowOTP] = useState(false)
 
   
     <UserHeader />
-    <main className='mt-[80px] sm:mt-[200px]' >
-      <UserRouter />
+    <main className='mt-[80px] sm:mt-[160px]' >
+      <UserRouter /> 
     </main>
     <UserFooter />
     </BookingContext.Provider>

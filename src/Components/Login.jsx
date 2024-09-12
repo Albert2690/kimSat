@@ -3,6 +3,8 @@ import { createContext, useState, useContext, useEffect } from 'react';
 import kimsatLogo from '../assets/Kimsat Logo/KIMSAT FINAL LOGO-2.png'
 import { motion } from 'framer-motion';
 import apiInstance from '../Api';
+import { toast } from 'react-toastify';
+
 
 import { BookingContext } from '../Layouts/Layout';
 import './Login.css'
@@ -24,6 +26,7 @@ function Login() {
       const handleSubmit = async() => {
 
         console.log('otp subbmission')
+        // toast.success('mobile updated')
 
         const response = await apiInstance.post("/patient/login", {
          phone_number:mobile

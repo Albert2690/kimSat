@@ -20,7 +20,7 @@ const specialities = [
 
 function Specialities() {
   return (
-    <div className="min-h-screen bg-gray-50   flex px-3 flex-col items-center py-12">
+    <div className="min-h-screen bg-gray-50   flex  flex-col items-center p-5  sm:p-16">
       <h1 className="text-4xl text-headingColor font-semibold mb-8">Our Specialities</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {specialities.map((speciality, index) => (
@@ -29,7 +29,7 @@ function Specialities() {
          whileInView={{opacity:1,y:0}}
          exit={{ opacity: 0, y: -100 }}
           transition={{ duration: 1.1, ease: "easeInOut" }}
-          key={index} className="bg-white card hover:bg-secondaryColor p-6 rounded-lg shadow-md text-center">
+          key={index} className="bg-white card hover:bg-[#8871A9] p-6 rounded-lg shadow-md text-center">
             {/* Use FontAwesomeIcon component */}
             <FontAwesomeIcon icon={speciality.icon} className="text-4xl text-secondaryColor card-child  mb-4" />
             <h2 className="text-xl font-semibold mb-2">{speciality.title}</h2>

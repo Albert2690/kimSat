@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 
 function OurVisionPage() {
   return (
-    <div className=" grid justify-center items-center  max-h-screen p-4">
-                    <div className="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row">
+    <div className=" grid justify-center bg-footerColor  items-center p-5  sm:p-16 max-h-screen">
+                    <div className=" p-8 rounded-lg shadow-sm flex flex-col md:flex-row">
                         <motion.div
                         
                        

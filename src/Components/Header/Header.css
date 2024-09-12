@@ -8,11 +8,11 @@
   }
   
   .scroll-container {
-    width: 80%; 
+    width: 25%; 
     overflow: hidden;
     position: relative;
     /* background-color: #ffff;  */
-    border-left: 1px solid #000; 
+    border-left: 1px solid #8871A9; 
     padding: 10px; 
   }
   

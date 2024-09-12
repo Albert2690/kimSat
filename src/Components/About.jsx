@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 function About() {
   return (
-    <div className="container bg-white p-8">
+    <div className="container bg-white p-5  sm:p-16">
       <div className="flex flex-col md:flex-row justify-between items-center">
       <motion.div 
   initial={{ opacity: 0, y: 100 }}
@@ -65,33 +65,33 @@ function About() {
         </motion.div>
       
       </div>
-      {/* <div className="flex justify-center mt-12">
-            <div className="flex items-center justify-between   space-x-3 md:space-x-16">
-              <div className="text-center transform hover:scale-125 duration-1000 hover:shadow-2xl p-5 rounded-lg">
-                <i className="fas fa-bed text-xl md:text-6xl  text-secondaryColor"></i>
-                <h4 className="text-lg md:text-3xl font-bold text-gray-900 mt-2">200+</h4>
+      <div className="flex justify-center  mt-12">
+            <div className="flex items-center justify-between ml-2 sm:ml-0  space-x-1 md:space-x-16">
+              <div className="text-center transform hover:scale-125 duration-1000 hover:shadow-2xl p-2 sm:p-5 rounded-lg">
+                <i className="fas fa-bed text-lg md:text-6xl  text-secondaryColor"></i>
+                <h4 className="text-sm md:text-3xl font-bold text-gray-900 mt-2">200+</h4>
                 <p className="text-xs md:text-sm text-gray-500">Bed Capacity</p>
               </div>
               <div className="border-l-2 border-gray-300 h-24"></div>
               <div className="text-center transform hover:scale-125 duration-1000 hover:shadow-2xl p-5 rounded-lg">
-                <i className="fas fa-user-md text-xl md:text-6xl text-secondaryColor"></i>
-                <h4 className="text-lg md:text-3xl font-bold text-gray-900 mt-2">8M+</h4>
+                <i className="fas fa-user-md text-lg md:text-6xl text-secondaryColor"></i>
+                <h4 className="text-sm md:text-3xl font-bold text-gray-900 mt-2">8M+</h4>
                 <p className="text-gray-500 text-xs md:text-sm">Cured Patients</p>
               </div>
               <div className="border-l-2 border-gray-300 h-24"></div>
               <div className="text-center transform hover:scale-125 duration-1000 hover:shadow-2xl p-5 rounded-lg">
-                <i className="fas fa-heartbeat text-xl md:text-6xl text-secondaryColor"></i>
-                <h4 className="text-lg md:text-3xl font-bold text-gray-900 mt-2">100+</h4>
+                <i className="fas fa-heartbeat text-lg md:text-6xl text-secondaryColor"></i>
+                <h4 className="text-sm md:text-3xl font-bold text-gray-900 mt-2">100+</h4>
                 <p className=" text-xs md:text-sm text-gray-500">Medical Apparatus</p>
               </div>
               <div className="border-l-2 border-gray-300 h-24"></div>
               <div className="text-center transform hover:scale-125  duration-1000 hover:shadow-2xl p-5 rounded-lg">
-                <i className="fas fa-clock text-xl md:text-6xl text-secondaryColor"></i>
-                <h4 className="text-lg md:text-3xl font-bold text-gray-900 mt-2">24/7</h4>
+                <i className="fas fa-clock text-lg md:text-6xl text-secondaryColor"></i>
+                <h4 className="text-sm md:text-3xl font-bold text-gray-900 mt-2">24/7</h4>
                 <p className="text-xs md:text-sm text-gray-500">Emergency & Trauma Care</p>
               </div>
             </div>
-          </div> */}
+          </div>
     </div>
   );
 }

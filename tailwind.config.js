@@ -8,8 +8,10 @@ export default {
          
           headingColor: "#44474d",
           textColor: "#6F6F6F",
-          secondaryColor:"#8871A9",
+          secondaryColor:"#7A5299",
+          thirdColor:'#8871A9',
           redColor:'#B22222',
+          footerColor:'#F8F8F8'
 
        
       }

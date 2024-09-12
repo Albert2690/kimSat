@@ -1,0 +1,13 @@
+@keyframes rotateY {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(45deg);
+    }
+  }
+  
+  .group-hover\:rotate-y-45:hover {
+    animation: rotateY 0.3s forwards;
+  }
+  
