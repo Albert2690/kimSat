@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import './DoctorList.css'
+import  { Link,useNavigate } from 'react-router-dom';
 
 function DoctorsList() {
   const [showMoreCenters, setShowMoreCenters] = useState(false);
   const [showMoreSpecialities, setShowMoreSpecialities] = useState(false);
   const [filterByCenters, setFilterByCenters] = useState([]);
   const  [filterBySpecialities, setFilterBySpecialities] = useState([]);
+  const navigate = useNavigate()
 
 
   const handleFilterByCenters = (center) => {
@@ -218,7 +220,7 @@ function DoctorsList() {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {Doctors.map((doctor, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
+            <div onClick={()=>navigate('/doctor-detials')} key={index} className="bg-white cursor-pointer p-6 rounded-lg shadow-md text-center">
               <img
                 src={doctor.image}
                 alt="Doctor's portrait"

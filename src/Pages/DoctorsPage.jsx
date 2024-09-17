@@ -7,7 +7,7 @@ import Login from '../Components/Login'
 function DoctorsPage() {
   return (
     <>
-    <section className='mt-0 p-5  sm:p-16 sm:mt-[-40px]'>
+      <section className='mt-0 sm:mt-[-40px]'>
       <div className="flex justify-center">
         <img src={DoctorPageImage} alt="" className='sm:w-screen sm:h-screen ' />
       </div>

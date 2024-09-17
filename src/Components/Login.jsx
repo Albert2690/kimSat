@@ -23,7 +23,8 @@ function Login() {
         }
       }, [showLogin]);
 
-      const handleSubmit = async() => {
+      const handleSubmit = async(e) => {
+        e.preventDefault()
 
         console.log('otp subbmission')
         // toast.success('mobile updated')

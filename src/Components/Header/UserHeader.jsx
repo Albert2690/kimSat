@@ -111,9 +111,9 @@ function UserHeader() {
   return (
     <div
       id="header"
-      className=" bg-white z-[1000] shadow-lg  fixed top-0 left-0 w-full"
+      className=" bg-white z-[1000] shadow-lg   fixed top-0 left-0 w-full"
     >
-      <header className="flex justify-center items-center ml-9  py-5 border-b">
+      <header className="flex justify-center ml-0  sm:ml-14 items-center   py-5 border-b">
         <div className="flex items-center">
           <img
             src={kimsatLogo}
@@ -192,7 +192,7 @@ function UserHeader() {
           } md:block`}
         >
           <Link to={"/"}>
-            <span className="inline-block highlight p-2 font-semibold text-secondaryColor  cursor-pointer">
+            <span onClick={()=>setMenuOpen(false)} className="inline-block highlight p-2 font-semibold text-secondaryColor  cursor-pointer">
               Home
             </span>
           </Link>
@@ -200,11 +200,15 @@ function UserHeader() {
           <span className="inline-block highlight p-2 font-semibold text-secondaryColor cursor-pointer">
             Patient Portal
           </span>
-          <span className="inline-block highlight p-2 font-semibold text-secondaryColor cursor-pointer">
+          <Link to={'/about'}>
+          
+          <span onClick={()=>setMenuOpen(false)} className="inline-block highlight p-2 font-semibold text-secondaryColor cursor-pointer">
             About
           </span>
+          </Link>
+         
           <Link to={"/doctors"}>
-            <span className="inline-block highlight p-2 font-semibold text-secondaryColor cursor-pointer">
+            <span onClick={()=>setMenuOpen(false)} className="inline-block highlight p-2 font-semibold text-secondaryColor cursor-pointer">
               Doctors
             </span>
           </Link>
