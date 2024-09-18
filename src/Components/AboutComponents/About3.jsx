@@ -1,4 +1,5 @@
 import React from 'react'
+import chairmanImage from '../../assets/images/chairman-02.jpg'
 
 function About3() {
   return (
@@ -35,7 +36,7 @@ function About3() {
         <p className="text-gray-500">(Chairman)</p>
     </div>
     
-    <img src="https://placehold.co/600x400" alt="An elderly man with glasses and a white shirt, smiling in a busy outdoor setting" className="rounded-lg shadow-lg mt-4 md:mt-0"/>
+    <img src={chairmanImage} alt="An elderly man with glasses and a white shirt, smiling in a busy outdoor setting" className="rounded-lg w-1/2 h-[400px] shadow-lg mt-4 md:mt-0"/>
 </div>
 </div>
   )

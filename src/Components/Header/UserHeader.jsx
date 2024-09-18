@@ -212,7 +212,9 @@ function UserHeader() {
               Doctors
             </span>
           </Link>
+          <Link to={'/departments'}>
           <span
+            onClick={()=>setMenuOpen(false)}
             onMouseOver={handleDepartmentsHover}
             onMouseOut={handleDepartmentsLeave}
             className="relative inline-block highlight p-2 font-semibold text-secondaryColor cursor-pointer"
@@ -221,7 +223,10 @@ function UserHeader() {
             <IoMdArrowDropdown className="absolute top-4 right-[-5%]" />
             {modalOpen && <DepartmentModal />}
           </span>
+          </Link>
+          <Link to={'/facilites'}>
           <span
+            onClick={()=>setMenuOpen(false)}
             onMouseOver={handleFacilitiesHover}
             onMouseOut={handlefacilitiesLeave}
             className="relative inline-block highlight p-2 font-semibold text-secondaryColor cursor-pointer"
@@ -230,6 +235,8 @@ function UserHeader() {
             <IoMdArrowDropdown className="absolute top-4 right-[-5%]" />
             {facility && <DepartmentModal />}
           </span>
+          </Link>
+        
           <span className="inline-block highlight p-2 font-semibold text-secondaryColor cursor-pointer">
             Blog
           </span>

@@ -29,7 +29,7 @@ function UserFooter() {
 //     Hello
 //     </div>
 //    </footer>
-<footer id='footer' className="  bg-[#F8F8F8] mt-10  p-5  sm:p-16">
+<footer id='footer' className="  bg-purple-50 mt-10  p-5  sm:p-16">
 <div className="grid grid-cols-1 sm:grid-cols-3 items-center justify-center mb-6">
     <div className="mb-4 md:mb-0">
         <p className="text-textColor text-sm sm:text-lg font-bold">For Appointments</p>
