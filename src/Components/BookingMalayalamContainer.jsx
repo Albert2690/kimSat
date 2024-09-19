@@ -15,10 +15,10 @@ function BookingContainer({ tab, setTab }) {
    {
     showBooking &&  
     (
-        <div id="bookingmalayalam" className="w-full sm:h-[300px] bg-secondaryColor mt-8 p-8 rounded-lg shadow-md">
+        <div id="bookingmalayalam" className="w-full sm:h-[300px] bg-[#F8F8F8] mt-8 p-8 rounded-lg shadow-md">
       <div className="flex flex-col md:flex-row justify-between items-center mb-6">
         <div className="flex space-x-8 mb-4 md:mb-0">
-          <button className="text-white font-semibold border-b-2 border-red-500 pb-2">
+          <button className="text-headingColor font-semibold border-b-2 border-red-500 pb-2">
           സ്‌പെഷ്യാലിറ്റികളും  ഡോക്ടർമാരും
           </button>
         </div>
@@ -27,7 +27,7 @@ function BookingContainer({ tab, setTab }) {
             onClick={() => setTab("malayalam")}
             className={`${
               tab === "malayalam"
-                ? "text-white font-semibold border-b-2 border-red-500"
+                ? "text-black font-semibold border-b-2 border-red-500"
                 : "text-gray-500"
             }`}
           >
@@ -37,7 +37,7 @@ function BookingContainer({ tab, setTab }) {
             onClick={() => setTab("english")}
             className={`${
               tab === "english"
-                ? "text-white font-semibold border-b-2 border-red-500"
+                ? "text-headingColor font-semibold border-b-2 border-red-500"
                 : "text-gray-500"
             }`}
           >
@@ -47,9 +47,9 @@ function BookingContainer({ tab, setTab }) {
       </div>
       <div className="flex flex-col md:flex-row md:justify-between space-y-4 sm:mt-10 md:space-y-0 md:space-x-6">
         <div className="flex flex-col items-center w-full md:w-1/4">
-          <label className="text-white font-semibold mb-2"> സ്‌പെഷ്യാലിറ്റികൾ  </label>
+          <label className="text-headingColor font-semibold mb-2"> സ്‌പെഷ്യാലിറ്റികൾ  </label>
           <div className="relative w-full">
-            <select className="appearance-none border rounded-full py-2 px-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <select className="appearance-none border rounded-full py-2 px-4 w-full text-headingColor leading-tight focus:outline-none focus:shadow-outline">
               <option>Select Specialities</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
@@ -58,7 +58,7 @@ function BookingContainer({ tab, setTab }) {
           </div>
         </div>
         <div className="flex flex-col items-center w-full md:w-1/4">
-          <label className="text-white font-semibold mb-2">ഡോക്ടർമാർ</label>
+          <label className="text-headingColor font-semibold mb-2">ഡോക്ടർമാർ</label>
           <div className="relative w-full">
             <select className="appearance-none border rounded-full py-2 px-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
               <option>Select Doctors</option>

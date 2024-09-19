@@ -1,4 +1,5 @@
 import React from 'react'
+import { useParams } from 'react-router-dom';
 
 const Doctors = [
     {
@@ -68,6 +69,10 @@ const Doctors = [
   ];
 
 function DepartmentDetialPage() {
+
+  const {no} = useParams()
+
+  console.log(no,'numberrr')
   return (
     <div className='bg-purple-50  '>
                     <section className="   p-8 relative">

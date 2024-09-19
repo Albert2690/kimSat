@@ -8,6 +8,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import FacilitiesModal from "../FacilitiesComponents/FacilitiesModal";
 
 import {
   faAmbulance,
@@ -233,7 +234,7 @@ function UserHeader() {
           >
             Facilities
             <IoMdArrowDropdown className="absolute top-4 right-[-5%]" />
-            {facility && <DepartmentModal />}
+            {facility && <FacilitiesModal />}
           </span>
           </Link>
         

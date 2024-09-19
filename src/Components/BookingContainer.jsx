@@ -14,7 +14,7 @@ function BookingContainer({tab,setTab}) {
     <div className="w-full sm:h-[300px] bg-[#F8F8F8] p-8 rounded-lg shadow-md">
       <div className="flex flex-col md:flex-row justify-between items-center mb-6">
         <div className="flex space-x-8 mb-4 md:mb-0">
-          <button className="text-black font-semibold border-b-2 border-red-500 pb-2">
+          <button className="text-headingColor font-semibold border-b-2 border-red-500 pb-2">
             Find Speciality & Doctors
           </button>
         </div>

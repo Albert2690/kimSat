@@ -17,9 +17,9 @@ function UserRouter() {
    <Route  path="/doctors" element={<DoctorsPage/>}/>
    <Route path='/about' element={<AboutPage/>} />
    <Route path='/departments' element={<DepartmentPage/>} />
-   <Route path='/department-detial' element={<DepartmentDetialPage/>} />
+   <Route path='/department-detial/:no' element={<DepartmentDetialPage/>} />
    <Route path='/facilites' element={<Facilities/>} />
-
+ 
 
    
 

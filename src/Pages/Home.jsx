@@ -11,6 +11,7 @@ import Blog from '../Components/Blog';
 import { motion } from 'framer-motion';
 import Login from '../Components/Login';
 import OtpVerification from '../Components/OtpVerification';
+import Stories from '../Components/Stories'; 
 
 function Home() {
 
@@ -79,6 +80,7 @@ function Home() {
     <Specialities/>
     <OurVisionPage/>
     <Blog/>
+    <Stories/>
    </>
   );
 }
