@@ -10,7 +10,6 @@ const ScrollComponents = () => {
 
   const toggleVisibility = () => {
     const scrollY = window.pageYOffset;
-    console.log(scrollY,'scrolling')
 
     if (scrollY > 300) { 
       setIsVisible(true);

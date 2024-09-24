@@ -7,18 +7,26 @@ import AboutPage from '../Pages/AboutPage'
 import DepartmentPage from '../Pages/DepartmentPage'
 import DepartmentDetialPage from '../Pages/DepartmentDetialPage'
 import Facilities from '../Pages/Facilities'
+import Contact from '../Pages/Contact'
+import Career from '../Pages/Career'
 
 
 function UserRouter() {
   return (
   <Routes>
     <Route path="/" element={<Home/>} />
+    {/* <Route path="/doctor-detials/:id" element={<DoctorDetialsPage/>} /> */}
     <Route path="/doctor-detials" element={<DoctorDetialsPage/>} />
+
    <Route  path="/doctors" element={<DoctorsPage/>}/>
    <Route path='/about' element={<AboutPage/>} />
    <Route path='/departments' element={<DepartmentPage/>} />
    <Route path='/department-detial/:no' element={<DepartmentDetialPage/>} />
    <Route path='/facilites' element={<Facilities/>} />
+   <Route path='/contact-us' element={<Contact/>} />
+   <Route path='/career' element={<Career/>} />
+
+
  
 
    

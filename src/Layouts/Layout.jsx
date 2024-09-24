@@ -5,6 +5,7 @@ import UserFooter from '../Components/Footer/UserFooter'
 import Loader from '../Components/Loader/Loader'
 import ScrollComponents from '../Components/Scroll/ScrollComponents'
 import ChatRedirect from '../Components/WhatsappChat/ChatRedirect'
+import Login from '../Components/Login'
 
 
 export const  BookingContext = createContext()
@@ -24,6 +25,7 @@ const [showOTP,setShowOTP] = useState(false)
     <UserHeader />
     <main className=' relative mt-[80px] sm:mt-[160px]' >
       <UserRouter /> 
+      <Login/>
       <ScrollComponents/>
       <ChatRedirect/>
 

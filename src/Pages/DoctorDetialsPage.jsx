@@ -73,7 +73,7 @@ function DoctorDetailsPage() {
                 <p
                 
                 className="mt-4 para text-lg transition ">
-                  Dr. Mohammed Hussain is currently working as Clinical Assistant Professor in the Department of Radiation Oncology at Amrita Institute of Medical Sciences. He completed his MBBS in 2011 from Bangalore Medical College and Research Institute and MD Radiation Oncology in 2016 from Tata Memorial Centre. He has co-authored publications in national and international journals.
+                  Dr. Mohammed Hussain is currently working as Clinical Assistant Professor in the Department of Radiation Oncology at Kimsat Hospital. He completed his MBBS in 2011 from Bangalore Medical College and Research Institute and MD Radiation Oncology in 2016 from Tata Memorial Centre. He has co-authored publications in national and international journals.
                 </p>
                 </motion.div>
             )}

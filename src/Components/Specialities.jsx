@@ -7,6 +7,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './Specialities.css'
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const specialities = [
     { icon: faAmbulance, title: "Emergency Medicine", description: 'Kimsat Hospital operates a state-of-the-art emergency department staffed by highly skilled emergency...' },
@@ -37,9 +38,12 @@ function Specialities() {
           </motion.div>
         ))}
       </div>
+      <Link to={'/departments'}>
       <button className="mt-8 btn">
         VIEW MORE <FontAwesomeIcon icon="arrow-right" className="ml-2" />
       </button>
+      </Link>
+     
     </div>
   );
 }

@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 import Login from '../Components/Login';
 import OtpVerification from '../Components/OtpVerification';
 import Stories from '../Components/Stories'; 
+import apiInstance from '../Api';
 
 function Home() {
 
@@ -66,7 +67,7 @@ function Home() {
         </div> */}
         <OtpVerification/>
 
-        <Login/>
+       
      
     </section>
     {  tab==='malayalam'?

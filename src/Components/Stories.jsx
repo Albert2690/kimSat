@@ -51,13 +51,13 @@ function Stories() {
         date: 'ജൂണ്‍ 10 ന്',
         video: false,
       },
-    // ... more stories
+    
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       nextStory();
-    }, 3000); // Change every 3 seconds
+    }, 3000); 
 
     return () => clearInterval(interval);
   }, [currentStartIndex]);
@@ -65,18 +65,17 @@ function Stories() {
   const nextStory = () => {
     setCurrentStartIndex((prevIndex) => {
       const nextIndex = prevIndex + 1;
-      return nextIndex >= stories.length ? 0 : nextIndex; // Reset to 0 if the end is reached
+      return nextIndex >= stories.length ? 0 : nextIndex; 
     });
   };
 
   const previousStory = () => {
     setCurrentStartIndex((prevIndex) => {
       const prevIndexAdjusted = prevIndex - 1;
-      return prevIndexAdjusted < 0 ? stories.length - 1 : prevIndexAdjusted; // Loop back to the last index
+      return prevIndexAdjusted < 0 ? stories.length - 1 : prevIndexAdjusted; 
     });
   };
 
-  // Determine the stories to display
   let displayedStories = stories.slice(currentStartIndex, currentStartIndex + 3);
   if (currentStartIndex + 3 > stories.length) {
     displayedStories = [
@@ -86,12 +85,10 @@ function Stories() {
     ];
   }
 
-  // Calculate progress
   const progressPercentage = (currentStartIndex / (stories.length - 1)) * 100;
-  const progressWidth = '6%'; // Set the width of the progress line
+  const progressWidth = '6%'; 
 
 
-  // Handle progress line click
   const handleProgressClick = (e) => {
     const progressBar = e.currentTarget;
     const clickX = e.clientX - progressBar.getBoundingClientRect().left; 
@@ -104,11 +101,13 @@ function Stories() {
     <div className="p-8">
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h1 className="text-4xl font-bold">Stories</h1>
-          <p className="text-red-600">Patient Stories</p>
+          <h1 className="text-4xl text-headingColor font-bold">Stories</h1>
+          <p className="text-secondaryColor font-semibold">Patient Stories</p>
         </div>
-        <button className="border border-red-600 text-red-600 px-4 py-2 rounded-full flex items-center">
-          VIEW ALL <i className="fas fa-arrow-right ml-2"></i>
+        <button className='btn group'>
+        VIEW ALL
+        <i className="fas fa-arrow-right transition-transform duration-1000 group-hover:translate-x-2 ml-1">
+        </i>
         </button>
       </div>
       <div className="relative overflow-hidden scrollbar-custom">

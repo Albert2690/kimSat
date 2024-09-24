@@ -112,7 +112,7 @@ function UserHeader() {
   return (
     <div
       id="header"
-      className=" bg-white z-[1000] shadow-lg   fixed top-0 left-0 w-full"
+      className=" bg-white z-[1000] shadow-md   fixed top-0 left-0 w-full"
     >
       <header className="flex justify-center ml-0  sm:ml-14 items-center   py-5 border-b">
         <div className="flex items-center">
@@ -139,7 +139,7 @@ function UserHeader() {
 
         
             <div className="flex  space-x-2 justify-center ml-12 items-center  ">
-              <FontAwesomeIcon icon={faPhone} className="text-secondaryColor text-lg" />
+              <FontAwesomeIcon icon={faPhone} className="text-white p-2 rounded-full bg-thirdColor hover:bg-secondaryColor text-lg" />
               <h2 className=" text-sm font-semibold text-secondaryColor ">
                  -
               </h2>
@@ -241,12 +241,18 @@ function UserHeader() {
           <span className="inline-block highlight p-2 font-semibold text-secondaryColor cursor-pointer">
             Blog
           </span>
+          <Link to={'/career'}>
           <span className="inline-block highlight p-2 font-semibold text-secondaryColor cursor-pointer">
             Careers
           </span>
+          </Link>
+         
+          <Link to={'/contact-us'}>
           <span className="inline-block highlight p-2 font-semibold text-secondaryColor cursor-pointer">
             Contact
           </span>
+          </Link>
+       
           <div
             onClick={() => setShowLogin(true)}
             className="flex flex-row sm:hidden cursor-pointer space-x-4 ml-1   items-center"

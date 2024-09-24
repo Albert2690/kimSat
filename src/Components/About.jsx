@@ -36,27 +36,27 @@ function About() {
               className="relative w-[300px] h-[320px] z-20 sm:w-[400px] sm:h-[420px] md:w-[530px] md:h-[556px]"
             />
             {/* Card 1 */}
-            <div className="absolute top-[25%] left-[-12%] z-[0] opacity-90 transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 duration-1000 hover:shadow-2xl bg-white p-4 rounded-lg shadow-lg flex items-center space-x-2">
-              <i className="fas fa-search text-secondaryColor"></i>
+            <div className="absolute top-[25%] sm:left-[-12%] left-[20%] z-[0] opacity-90 transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 duration-1000 hover:shadow-2xl bg-white  rounded-lg shadow-lg flex items-center space-x-1 sm:space-x-2 p-2 sm:p-4">
+              <i className="fas fa-search text-[12px] sm:text-lg text-secondaryColor"></i>
               <div>
-                <p className="text-headingColor font-bold">Well Qualified doctors</p>
-                <p className="text-textColor text-xs mt-1 font-semibold">Treat with care</p>
+                <p className="text-headingColor text-[12px] sm:text-lg font-bold">Well Qualified doctors</p>
+                <p className="text-textColor text-[10px] sm:text-lg mt-1 font-semibold">Treat with care</p>
               </div>
             </div>
             {/* Card 2 */}
-            <div className="absolute top-[20%] right-[-40%] opacity-90 z-[39] transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 duration-1000 hover:shadow-2xl bg-white p-4 rounded-lg shadow-lg flex items-center space-x-2">
-              <i className="fas fa-calendar-alt text-secondaryColor"></i>
+            <div className="absolute top-[20%] sm:right-[-40%] right-[-50%] opacity-90 z-[39] transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 duration-1000 hover:shadow-2xl bg-white  rounded-lg shadow-lg flex items-center space-x-1 sm:space-x-2 p-2 sm:p-4">
+              <i className="fas fa-calendar-alt text-[12px] sm:text-lg text-secondaryColor"></i>
               <div>
-                <p className="text-headingColor font-bold">Book an appointment</p>
-                <p className="text-textColor text-xs mt-1 font-semibold">Online appointment</p>
+                <p className="text-headingColor text-[12px] sm:text-lg font-bold">Book an appointment</p>
+                <p className="text-textColor text-[10px] sm:text-lg mt-1 font-semibold">Online appointment</p>
               </div>
             </div>
             {/* Card 3 */}
-            <div className="absolute bottom-[10%] left-[10%] z-[42] opacity-90 transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 duration-1000 hover:shadow-2xl bg-white px-6 py-4 rounded-lg shadow-lg flex items-center space-x-2">
-              <i className="fas fa-phone-alt text-secondaryColor"></i>
+            <div className="absolute bottom-[10%] left-[10%] z-[42] opacity-90 transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 duration-1000 hover:shadow-2xl bg-white sm:px-6 sm:py-4 rounded-lg shadow-lg flex items-center space-x-1 sm:space-x-2 p-2 sm:p-4">
+              <i className="fas fa-phone-alt text-[12px] sm:text-lg text-secondaryColor"></i>
               <div>
-                <p className="text-headingColor font-bold">Contact no</p>
-                <p className="text-textColor text-xs mt-1 font-semibold">+91 4742982035</p>
+                <p className="text-headingColor text-[12px] sm:text-lg font-bold">Contact no</p>
+                <p className="text-textColor text-[10px] sm:text-lg mt-1 font-semibold">+91 4742982035</p>
               </div>
             </div>
             
