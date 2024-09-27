@@ -78,72 +78,72 @@ console.log(filterBySpecialities,'filterDoctors ')
       name: "Dr. Mohammed Hussain",
       image:
         "https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=",
-        specialities: ["Orthopaedics"],
+        // specialities: ["Orthopaedics"],
       Qualification: "MBBS, DNB (General Medicine)",
-      // specialities:'Orthopaedics'
+      department:'Orthopaedics'
     },
     {
         name: "Dr. Mohammed Hussain",
         image:
           "https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=",
-          specialities: ["Cardiology"],
+          // specialities: ["Cardiology"],
         Qualification: "MBBS, DNB (General Medicine)",
-        // specialities:'Orthopaedics'
+        department:'Orthopaedics'
       },
       {
         name: "Dr. Mohammed Hussain",
         image:
           "https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=",
-          specialities: ["Orthopaedics"],
+          // specialities: ["Orthopaedics"],
         Qualification: "MBBS, DNB (General Medicine)",
-        // specialities:'Orthopaedicss'
+        department:'Orthopaedicss'
       },
       {
         name: "Dr. Mohammed Hussain",
         image:
           "https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=",
-          specialities: ["Orthopaedics"],
+          // specialities: ["Orthopaedics"],
         Qualification: "MBBS, DNB (General Medicine)",
-        // specialities:'Orthopaedics'
+        department:'Orthopaedics'
       },
       {
         name: "Dr. Mohammed Hussain",
         image:
           "https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=",
-          specialities: ["Cardiology"],
+          // specialities: ["Cardiology"],
         Qualification: "MBBS, DNB (General Medicine)",
-        // specialities:'Orthopaedics'
+        department:'Orthopaedics'
       },
       {
         name: "Dr. Mohammed Hussain",
         image:
           "https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=",
-          specialities: ["Orthopaedics"],
+          // specialities: ["Orthopaedics"],
         Qualification: "MBBS, DNB (General Medicine)",
-        // specialities:'Orthopaedics'
+        department:'Orthopaedics'
       },
       {
         name: "Dr. Mohammed Hussain",
         image:
           "https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=",
-          specialities: ["Gastroenterology","Cardiology"],
+          // specialities: ["Gastroenterology","Cardiology"],
         Qualification: "MBBS, DNB (General Medicine)",
-        // specialities:'Orthopaedics'
+        department:'Orthopaedics'
       },
-      {
-        name: "Dr. Mohammed Hussain",
-        image:
-          "https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=",
-          specialities: ["Orthopaedics","Gastroenterology"],
-        Qualification: "MBBS, DNB (General Medicine)",
-      },
-      {
-        name: "Dr. Mohammed Hussain",
-        image:
-          "https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=",
-          specialities: ["Gastroenterology"],
-        Qualification: "MBBS, DNB (General Medicine)",
-      },
+      // {
+      //   name: "Dr. Mohammed Hussain",
+      //   image:
+      //     "https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=",
+      //     specialities: ["Orthopaedics","Gastroenterology"],
+      //   Qualification: "MBBS, DNB (General Medicine)",
+      // },
+      // {
+      //   name: "Dr. Mohammed Hussain",
+      //   image:
+      //     "https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=",
+      //     specialities: ["Gastroenterology"],
+      //   Qualification: "MBBS, DNB (General Medicine)",
+      // },
     // Add more doctor objects as needed
   ];
 
@@ -172,7 +172,7 @@ console.log(filterBySpecialities,'filterDoctors ')
           </div>
 
           {/* Centers Of Excellence Section */}
-          <div className="mb-6">
+          {/* <div className="mb-6">
             <h3 className="text-md text-headingColor font-medium mb-2">Centers Of Excellence</h3>
             <ul className="space-y-2">
               {displayCenters.map((center, index) => (
@@ -206,7 +206,7 @@ console.log(filterBySpecialities,'filterDoctors ')
                 View Less
               </button>
             )}
-          </div>
+          </div> */}
 
           {/* Specialities Section */}
           <div>
@@ -260,10 +260,10 @@ console.log(filterBySpecialities,'filterDoctors ')
                 className="mx-auto mb-4 object-fit"
               />
               <h2 className="text-lg text-headingColor font-medium">{doctor.name}</h2>
-              {doctor.specialities.map((dept)=>(
-              <p className="text-sm font-medium  text-textColor">{`${dept},`}</p>
+              {/* {doctor.department.map((dept)=>( */}
+              <p className="text-sm font-medium  text-textColor">{doctor.department}</p>
 
-              ))}
+              {/* ))} */}
               
               <p className="text-sm text-gray-600">{doctor.Qualification}</p>
             </div>

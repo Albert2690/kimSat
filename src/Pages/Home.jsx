@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import kimsatImage from '../assets/images/Untitled-1-01.png';
 import './Home.css';
@@ -13,11 +13,26 @@ import Login from '../Components/Login';
 import OtpVerification from '../Components/OtpVerification';
 import Stories from '../Components/Stories'; 
 import apiInstance from '../Api';
+import Cookies from 'universal-cookie';
+
 
 function Home() {
-
+  
     const [tab,setTab] = useState('malayalam')
+    const [token, setToken] = useState(null); // Initialize state for token
+  const cookies = new Cookies();
 
+  useEffect(() => {
+    const fetchedToken = cookies.get('access_token');
+    console.log(fetchedToken, 'fetctokenn'); // This logs the fetched token from cookies
+    setToken(fetchedToken); 
+  }, []); // Empty dependency array ensures this runs once on mount
+
+  useEffect(() => {
+    console.log(token, 'token'); // This will log the token after it's been updated
+  }, [token]); // This runs every time the token changes
+
+   
   return (
     <>
     <section className="text-center flex md:flex-row-reverse gap-5 justify-around items-center flex-col    bg-white">

@@ -23,7 +23,7 @@ function Specialities() {
   return (
     <div className="min-h-screen bg-gray-50   flex  flex-col items-center p-5  sm:p-16">
       <h1 className="text-4xl text-headingColor font-semibold mb-8">Our Specialities</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
         {specialities.map((speciality, index) => (
           <motion.div
           initial={{ opacity: 0, y: 100 }}

@@ -13,6 +13,7 @@ function Login() {
 
     const {showLogin,setShowLogin,showOTP,setShowOTP} = useContext(BookingContext)
     const [mobile,setMobile] = useState('')
+    const [error,setError] = useState('')
     console.log(mobile,'mobile consoling from login')
 
     useEffect(() => {
@@ -28,7 +29,11 @@ function Login() {
 
         console.log('otp subbmission')
         // toast.success('mobile updated')
-
+        if(mobile.length!==10){
+          setError('Enter a valid mobile number')
+          return
+        }
+        setError('')
         const response = await apiInstance.post("/patient/login", {
          phone_number:mobile
         }, {
@@ -74,15 +79,20 @@ function Login() {
                  <h2 className="text-xl font-medium text-secondaryColor mt-6">Enter Your Mobile Number</h2>
                  <p className="text-textColor mt-2">We will sent you an <span className="font-bold">One Time Password</span> on this mobile number</p>
                  <div className="mt-6">
-                     <div className="flex items-center border border-textColor rounded-lg p-2">
-                         <span className="text-textColor">+91</span>
-                         <form >
-                         <input type="number" onChange={(e)=>setMobile(e.target.value)} placeholder ="Enter your mobile number here" className=" ml-2 w-full text-sm sm:text-lg outline-none" />
+                     <div className="flex items-center  ">
+                         
+                         <form  onSubmit={handleSubmit}>
+                          <div className='flex flex-row justify-center'>
+                          <span className="text-textColor text-xl mt-3">+91</span>  
+                          <input type="number" onChange={(e)=>setMobile(e.target.value)} placeholder ="Enter your mobile " className="border rounded-lg  p-2 border-textColor ml-2 min-w-[300px] text-sm sm:text-lg outline-none" />
+                          </div>
+                       
+                         <button type='submit' className="mt-6  bg-secondaryColor text-white py-2 px-3 w-[200px] rounded-lg">Get OTP</button>
                          </form>
                      </div>
                      
                  </div>
-                 <button onClick={handleSubmit} className="mt-6 w-full bg-secondaryColor text-white py-2 rounded-lg">Get OTP</button>
+              
                  <p className="text-xs text-redColor mt-4">Powered by Kimsat Hospital</p>
              </motion.div>
                  </div>

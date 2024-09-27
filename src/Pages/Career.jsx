@@ -1,8 +1,11 @@
 import React from 'react'
+import Career3 from '../Components/Careers/Career3'
 
 function Career() {
   return (
-    <div>Career</div>
+  <>
+  <Career3/>
+  </>
   )
 }
 

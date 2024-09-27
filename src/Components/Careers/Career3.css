@@ -1,0 +1,9 @@
+input[type="file"]::file-selector-button {
+    opacity: 0;
+    /* Or: display: none; */
+    width: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+  

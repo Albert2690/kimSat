@@ -1,12 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from 'react-router-dom';
 import {
     faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from 'framer-motion';
+import apiInstance from '../Api';
 
 function DoctorDetailsPage() {
   const [tab, setTab] = useState('Overview'); // State for active tab
+
+ 
+
+  useEffect(() => {
+    const handleDoctorApi = async () => {
+      try {
+        const id = 'e820a9df-2b01-416a-90f2-7ff5d3917196';
+  
+        const otpResponse = await apiInstance.get(`doctors/${id}/`, {
+          withCredentials: true,
+        });
+  
+        console.log(otpResponse, 'doctor details');
+      } catch (err) {
+        console.log(err);
+      }
+    };
+  
+    handleDoctorApi();
+  }, []);
+  
 
   return (
     <div className=" mx-auto  bg-white  shadow-sm">
@@ -21,6 +44,7 @@ function DoctorDetailsPage() {
             </div>
           
           <div className="mt-4 flex flex-col md:flex-row items-center md:items-start">
+            <Link to={'/booking'}>
             <button className="hover:bg-secondaryColor bg-thirdColor text-white px-4 py-2 rounded-full flex space-x-2 items-center mb-2 md:mb-0 group transition-all duration-300 ease-in-out">
               <span>Book an Appointment</span>
               <FontAwesomeIcon
@@ -28,6 +52,8 @@ function DoctorDetailsPage() {
                 className="p-2 text-white  rounded-full transform transition-transform duration-1000 group-hover:translate-x-2"
               />
             </button>
+            </Link>
+
           </div>
         </div>
       </div>
@@ -90,35 +116,35 @@ function DoctorDetailsPage() {
         
         <div class="space-y-4">
             <div class="flex items-start">
-                <div class="border-l-2 border-black h-6 mr-2"></div>
+                <div class="border-l-2 border-secondaryColor h-6 mr-2"></div>
                 <div>
                     <h2 class="text-lg font-medium text-headingColor">MBBS</h2>
                     <p class="para">Bangalore Medical College and Research Institute, Rajiv Gandhi University of Health Sciences, 2006-2011</p>
                 </div>
             </div>
             <div class="flex items-start">
-                <div class="border-l-2 border-black h-6 mr-2"></div>
+                <div class="border-l-2 border-secondaryColor h-6 mr-2"></div>
                 <div>
                     <h2 class="text-lg font-medium text-headingColor">Rotatory Internship</h2>
                     <p class="para">Bangalore Medical College and Research Institute, Rajiv Gandhi University of Health Sciences, 2011 - 2012</p>
                 </div>
             </div>
             <div class="flex items-start">
-                <div class="border-l-2 border-black h-6 mr-2"></div>
+                <div class="border-l-2 border-secondaryColor h-6 mr-2"></div>
                 <div>
                     <h2 class="text-lg font-medium text-headingColor">Doctor of Medicine (MD)</h2>
                     <p class="Para">Radiation Oncology from Tata Memorial Centre, 2016</p>
                 </div>
             </div>
             <div class="flex items-start">
-                <div class="border-l-2 border-black h-6 mr-2"></div>
+                <div class="border-l-2 border-secondaryColor h-6 mr-2"></div>
                 <div>
                     <h2 class="text-lg font-medium text-headingColor">Diplomate of National Board (DNB)</h2>
                     <p class="para">Radiation Oncology, from National Board of Examinations, New Delhi, 2021</p>
                 </div>
             </div>
             <div class="flex items-start">
-                <div class="border-l-2 border-black h-6 mr-2"></div>
+                <div class="border-l-2 border-secondaryColor h-6 mr-2"></div>
                 <div>
                     <h2 class="text-lg font-medium text-headingColor">Fellowship of the Royal College of Radiologists (FRCR)</h2>
                     <p class="para">London - Clinical Oncology, 2022</p>
@@ -139,7 +165,12 @@ function DoctorDetailsPage() {
              
              className="p-8 my-5 justify-center">
              <h1 className="text-xl  font-semibold mb-4">Work Experience</h1>
-             <div className="flex space-x-5 flex-col gap-5 justify-start items-start">
+             <div class="mb-4 p-4 bg-thirdColor hover:bg-secondaryColor text-white max-w-[500px] border border-secondary rounded-lg">
+        <span class="block text-lg font-bold text-secondary-foreground">2019 - Present</span>
+        <span class="block text-md font-medium">Clinical Assistant Professor</span>
+        <span class="block text-sm text-muted-foreground">Department of Radiation Oncology, Amrita Hospital, Kochi.</span>
+      </div>
+             {/* <div className="flex space-x-5 flex-col gap-5 justify-start items-start">
                  <div className="bg-thirdColor p-4 rounded-md shadow-md">
                      <span className="text-lg text-white font-semibold">2019 - Present</span>
                  </div>
@@ -147,16 +178,7 @@ function DoctorDetailsPage() {
                      <h2 className="text-lg font-semibold">Clinical Assistant Professor</h2>
                      <p className="para">Department of Radiation Oncology, Amrita Hospital, Kochi.</p>
                  </div>
-             </div>
-             <div className="flex space-x-5 flex-col gap-5 justify-start items-start">
-                 <div className="bg-thirdColor p-4 rounded-md shadow-md">
-                     <span className="text-lg text-white font-semibold">2019 - Present</span>
-                 </div>
-                 <div className="ml-0 sm:ml-4">
-                     <h2 className="text-lg font-semibold">Clinical Assistant Professor</h2>
-                     <p className="para">Department of Radiation Oncology, Amrita Hospital, Kochi.</p>
-                 </div>
-             </div>
+             </div> */}
              <div className="flex space-x-5 flex-col gap-5 justify-start items-start">
                  <div className="bg-thirdColor p-4 rounded-md shadow-md">
                      <span className="text-lg text-white font-semibold">2019 - Present</span>

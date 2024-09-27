@@ -6,9 +6,10 @@ import kimsatLogo from "../../assets/Kimsat Logo/KIMSAT FINAL LOGO-2.png";
 import DepartmentModal from "../DepartmentModal";
 import { IoMdArrowDropdown } from "react-icons/io";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FacilitiesModal from "../FacilitiesComponents/FacilitiesModal";
+import Cookies from "universal-cookie";
 
 import {
   faAmbulance,
@@ -35,6 +36,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function UserHeader() {
+
+  const cookies =  new Cookies();
+
+
+
+
+
+  const  navigate = useNavigate();
+
   const { showBooking, setShowBooking, showLogin, setShowLogin, setShowOtp } =
     useContext(BookingContext);
 
@@ -56,15 +66,24 @@ function UserHeader() {
       setIsSmallScreen(window.innerWidth < 640);
       setHeaderHeight(header?.offsetHeight || 0);
     };
-
+    const token =  cookies.get('access_token')
+    console.log(token,'token from  header')
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+    
   }, []);
+  // const cookiess = document.cookie.split(';').reduce((acc, cookie) => {
+  //   const [name, value] = cookie.split('=');
+  //   acc[name.trim()] = decodeURIComponent(value);
+  //   return acc;
+  // }, {});
+  
+  // console.log(cookiess['access_token'],'access_tokenn ');
 
   const handleScrollToBooking = () => {
     console.log("helloooihuihui");
     setShowBooking(true);
-
+    navigate('/')
     setTimeout(() => {
       const bookingElement = document.getElementById("bookingmalayalam");
 
@@ -72,7 +91,7 @@ function UserHeader() {
         const elementPosition =
           bookingElement.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - headerHeight - 100;
-
+       
         window.scrollTo({
           top: offsetPosition,
           behavior: "smooth",

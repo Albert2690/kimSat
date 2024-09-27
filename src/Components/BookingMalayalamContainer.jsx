@@ -234,11 +234,13 @@ console.log(filteredDoctor,'doctors')
           </div>
         </div>
         <div className="flex items-center justify-center w-full md:w-1/4">
+        {doctorId && 
         <Link to={`/doctor-detials/${doctorId}`} >
         <button className="flex  items-center btn">
             View Profile <i className="fas fa-arrow-right ml-2"></i>
           </button>
         </Link>
+}
          
         </div>
         

@@ -6,7 +6,7 @@ function About1() {
   return (
     <div className=" bg-footerColor flex flex-col items-center">
     <div className="w-full">
-        <img src={SurgeonImage} alt="Medical team in an operating room" className="w-full scale-animation h-[350px]" />
+        <img src={SurgeonImage} alt="Medical team in an operating room" className="w-full scale-animation h-[350px] object-fill" />
     </div>
     
     <div className="bg-white w-full py-10 px-4 md:px-10 flex flex-row justify-around items-center shadow-md">
