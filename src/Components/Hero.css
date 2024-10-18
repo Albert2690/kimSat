@@ -1,0 +1,26 @@
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .item {
+    position: absolute;
+    transition: transform 3s ease, opacity 0.5s ease, filter 0.5s ease;
+
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .item.active {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+    filter: none;
+  }
+  
