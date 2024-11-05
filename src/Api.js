@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://34.230.50.181";
+const API_URL = "http://34.230.50.181";
 // const API_URL = "https://qf3gcdtq-8000.inc1.devtunnels.ms";
 // const API_URL = "http://localhost:9090/";
 

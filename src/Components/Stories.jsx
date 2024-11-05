@@ -104,11 +104,15 @@ function Stories() {
           <h1 className="text-4xl text-headingColor font-bold">Stories</h1>
           <p className="text-secondaryColor font-semibold">Patient Stories</p>
         </div>
+
+        <Link to={'/blog'}>
         <button className='btn group'>
         VIEW ALL
         <i className="fas fa-arrow-right transition-transform duration-1000 group-hover:translate-x-2 ml-1">
         </i>
         </button>
+        </Link>
+      
       </div>
       <div className="relative my-16 overflow-hidden scrollbar-custom">
         <div className="flex gap-5 transition-transform duration-500">

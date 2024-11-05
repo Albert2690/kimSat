@@ -11,10 +11,10 @@ function NotFound() {
     <section className=' '>
     
         <div className='flex  flex-col gap-10 justify-center items-center h-screen'>
-          <span className='text-4xl sm:text-6xl text-headingColor font-semibold'>OOPS .....!</span>
-            <span className='text-4xl sm:text-6xl leading-19 font-[900] items-center text-textColor'>404 Page Not Found</span>
+          <span className='text-6xl sm:text-7xl text-thirdColor font-[900] '>OOPS .....!</span>
+            <span className='text-4xl sm:text-6xl leading-19 font-[900] items-center text-thirdColor'>404 Page Not Found</span>
             <Link to={'/'}>
-            <div className='px-5 py-3 bg-thirdColor hover:bg-secondaryColor text-white'>Back Home</div>
+            <div className='px-5 py-3 bg-thirdColor rounded-full hover:bg-secondaryColor text-white'>Back Home</div>
             </Link>
         </div>
 

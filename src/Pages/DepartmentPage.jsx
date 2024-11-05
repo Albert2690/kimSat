@@ -2,6 +2,8 @@ import React,{useState,useEffect} from "react";
 import Department1 from "../Components/DepartmentComponents/Department1";
 import apiInstance from "../Api";
 import DepartmentPageImage from "../assets/images/WhatsApp Image 2024-10-02 at 11.29.28 AM.jpeg";
+import KimsatBanner4 from '../assets/images/WhatsApp Image 2024-10-22 at 3.52.00 PM.jpeg'
+
 
 function DepartmentPage() {
   const [departments,setDepartments] = useState([])
@@ -38,9 +40,9 @@ function DepartmentPage() {
 
         <div className="w-full">
           <img
-            src={DepartmentPageImage}
+            src={KimsatBanner4}
             alt="Medical team in an operating room"
-            className="w-full h-[550px] object-cover"
+            className=" sm:h-[550px] object-cover"
           />
         </div>
         {/* <h2 className='absolute top-1/2 left-1/4 text-8xl text-white font-bold z-10'>Departments</h2> */}

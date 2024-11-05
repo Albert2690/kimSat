@@ -10,6 +10,10 @@ function BookingButton() {
   const navigate = useNavigate()
 
   const [headerHeight, setHeaderHeight] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [facility, setModalOpenFacility] = useState(false);
+
+
 
   useEffect(() => {
 
@@ -26,7 +30,7 @@ function BookingButton() {
     return () => window.removeEventListener("resize", handleResize);
   }, [navigate,]);
 
-  
+
   const { showBooking, setShowBooking, showLogin, setShowLogin, setShowOtp } =
     useContext(BookingContext);
 

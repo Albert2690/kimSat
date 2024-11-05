@@ -31,7 +31,7 @@ function Login() {
 
        
 
-        // console.log('otp subbmission')
+        console.log('otp subbmission')
         // toast.success('mobile updated')
         if(mobile.length!==10){
           setError('Enter a valid mobile number')
@@ -49,7 +49,7 @@ function Login() {
           // console.log(response.data.mesage,'message')
           // console.log(response,'mobile while submiting')
           setShowLogin(false)
-          // console.log('clicked')
+          console.log('clicked')
           setShowOTP(true)
 
         }else{
@@ -80,14 +80,14 @@ function Login() {
             <motion.div
            
             
-            className="modal-overlay ">
+            className="modal-overlay modal-overlay flex flex-row justify-center s:flex-row sm:justify-end ">
                  <div className="modal-content ">
                    < motion.div
                     initial={{ opacity: 0, y: 100 }}
                     whileInView={{opacity:1,y:0}}
                     exit={{ opacity: 0, y: 100 }}
                      transition={{ duration: 1.1, ease: "easeInOut" }}
-                   className="w-full flex-col space-y-8 max-w-md p-9 shadow-lg bg-white rounded-lg text-center">
+                   className=" max-w-md sm:w-full flex-col space-y-8   p-9 shadow-lg bg-white rounded-lg text-center">
                  <div onClick={handleClose} className="flex  justify-end">
                      <i className="fas fa-times text-gray-500 cursor-pointer"></i>
                  </div>
@@ -96,9 +96,10 @@ function Login() {
                  <h2 className="text-xl font-medium text-secondaryColor mt-6">Enter Your Mobile Number</h2>
                  <p className="text-textColor mt-2">We will sent you an <span className="font-bold">One Time Password</span> on this mobile number</p>
                  <div className="mt-6">
-                     <div className="flex items-center  ">
+                     <div className="flex items-center justify-center  ">
                          
                          <form  onSubmit={handleSubmit}>
+                        
                           <div className='flex flex-row justify-center'>
                           <span className="text-textColor text-xl mt-3">+91</span>  
                           <input type="number" onChange={(e)=>setMobile(e.target.value)} placeholder ="Enter your mobile " className="border rounded-lg  p-2 border-textColor ml-2 min-w-[300px] text-sm sm:text-lg outline-none" />

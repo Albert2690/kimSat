@@ -10,30 +10,46 @@ import { Link } from "react-router-dom";
 // Updated departments with correct FontAwesome icons
 const departments = [
   { name: "Emergency Medicine(Casualty)", icon: faAmbulance },
-  { name: "Clinical Nutrition", icon: faAppleAlt },
-  { name: "ENT", icon: faStethoscope },
-  { name: "Pharmacy", icon: faPills },
-  { name: "Dermatology", icon: faHandSparkles },
-  { name: "Anesthesiology", icon: faSyringe },
-  { name: "Cardiology", icon: faHeartbeat },
-  { name: "Pulmonology", icon: faLungs },
+  { name: "General Medicine", icon: faNotesMedical },
+  { name: "Laparoscopic and General Surgery", icon: faCut },
   { name: "Orthopaedics", icon: faBone },
-  { name: "Radiology", icon: faXRay },
+  { name: "Pulmonology", icon: faLungs },
+  { name: "ENT", icon: faStethoscope },
+  { name: "Nephrology", icon: faVial },
+  { name: "Neurology", icon: faBrain },
   { name: "Neurosurgery", icon: faBrain },
-  { name: "Nephrology", icon: faVial }, // Best alternative for Nephrology
-  { name: "Transfusion Medicine", icon: faVial },
+  { name: "Pediatrics", icon: faChild },
+  { name: "Cardiology", icon: faHeartbeat },
   { name: "Gynecology", icon: faVenus },
+  { name: "Endocrinology", icon: faDna },
+  { name: "Gastroenterology", icon: faCut },
+  { name: "Dermatology", icon: faHandSparkles },
+  { name: "Urology and Andrology", icon: faMale },
+  { name: "Pathology", icon: faMicroscope },
+  { name: "Radiology", icon: faXRay },
+
+
+  { name: "Clinical Nutrition", icon: faAppleAlt },
+  
+
+  { name: "Anesthesiology", icon: faSyringe },
+  
+ 
+  
+  
+  { name: "Pharmacy", icon: faPills },
   { name: "Central Laboratory & Biochemistry", icon: faFlask },
+  { name: "Transfusion Medicine", icon: faVial },
  
   { name: "Physiotherapy", icon: faDumbbell },
-  { name: "General Medicine", icon: faNotesMedical },
-  { name: "Endocrinology", icon: faDna },
-  { name: "Urology and Andrology", icon: faMale },
-  { name: "Gastroenterology", icon: faCut }, // Alternative icon for Gastroenterology
-  { name: "Neurology", icon: faBrain },
-  { name: "Pathology", icon: faMicroscope },
-  { name: "Laparoscopic and General Surgery", icon: faCut },
-  { name: "Pediatrics", icon: faChild }
+
+
+  
+  // Alternative icon for Gastroenterology
+
+ 
+ 
+ 
 ];
 
 function DepartmentModal() {

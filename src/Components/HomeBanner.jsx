@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react';
 import KimsatBanner1 from '../assets/images/cover 1.jpg';
 import KimsatBanner2 from '../assets/images/cover 2.jpg';
 import KimsatBanner3 from '../assets/images/cover 3.jpg';
+import KimsatBanner4 from '../assets/images/home banner template (1).jpg'
+// "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function HomeBanner() {
-  const images = [KimsatBanner1, KimsatBanner2, KimsatBanner3];
+  const images = [KimsatBanner1, KimsatBanner2, KimsatBanner3,KimsatBanner4];
 
   // Add clones for the infinite loop effect
   const totalSlides = images.length + 2; // 2 extra for clone slides
@@ -47,6 +49,25 @@ function HomeBanner() {
     }
   };
 
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const handleTouchStart = (e) => {
+    touchStartX = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchEndX < touchStartX - 50) {
+      handleNext(); // Swiped left
+    } else if (touchEndX > touchStartX + 50) {
+      handlePrev(); // Swiped right
+    }
+  };
+
   // Handle smooth transition reset when sliding infinitely
   useEffect(() => {
     if (!transition) {
@@ -65,7 +86,11 @@ function HomeBanner() {
         }}
       >
         {clonedImages.map((src, index) => (
-          <div key={index} className="w-full flex-shrink-0">
+          <div 
+           onTouchStart={handleTouchStart}
+           onTouchMove={handleTouchMove}
+           onTouchEnd={handleTouchEnd}
+          key={index} className="w-full flex-shrink-0">
             <img
               src={src}
               className="w-full  h-[400px] md:h-[600px] lg:h-[700px] object-cover"

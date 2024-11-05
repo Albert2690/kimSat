@@ -36,7 +36,7 @@ const members = [
   { name: "N.R. ANI", title: "",img:DoctorImage5 },
   { name: "R. LATHA", title: "" ,img:DefaultImage},
   { name: "JAYAPALAN", title: "",img:DefaultImage },
-  { name: "DR. SURESH S. PILLAI", title: "" ,img:DefaultImage},
+  // { name: "DR. SURESH S. PILLAI", title: "" ,img:DefaultImage},
 ];
 const GoverningBody = [
  
@@ -191,27 +191,31 @@ const About3 = () => {
               </div>
             </div>
           ))}
-            <div
-             
-             className=" mx-auto bg-white rounded-lg shadow-md overflow-hidden relative hover:bg-gray-50 transition-all duration-300"
-           >
-             <div className="relative group">
-               <img
-                 className="w-[300px] h-[300px]"
-                 src={DefaultImage}
-                 alt="Portrait of a person in a suit"
-               />
-               <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-             </div>
-             <div className="p-4 text-center">
-               <h2 className="text-xl font-semibold text-headingColor">
-               DR. SURESH S. PILLAI
-               </h2>
-             
-             </div>
-           </div>
+   
         </div>
-       
+        <div className="w-full flex flex-row justify-center">
+
+      
+<div
+ 
+ className=" mx-auto mt-10 bg-white rounded-lg shadow-md overflow-hidden relative hover:bg-gray-50 transition-all duration-300"
+>
+ <div className="relative group">
+   <img
+     className="w-[300px] h-[300px]"
+     src={DefaultImage}
+     alt="Portrait of a person in a suit"
+   />
+   <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+ </div>
+ <div className="p-4 text-center">
+   <h2 className="text-xl font-semibold text-headingColor">
+   DR. SURESH S. PILLAI
+   </h2>
+ 
+ </div>
+</div>
+</div>
       </div>
       <div className="flex flex-col smflex-row justify-center">
 

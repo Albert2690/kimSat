@@ -9,6 +9,7 @@ import Login from '../Components/Login'
 import OtpVerification from '../Components/OtpVerification'
 import BookingOtp from '../Components/BookingOtp'
 import BookingButton from '../Components/Scroll/BookingButton'
+import PhoneComponent from '../Components/Scroll/PhoneComponent'
 // import Loader from '../Components/Loader/Loader'
 
 export const  BookingContext = createContext()
@@ -36,6 +37,7 @@ const [showBookingOTP,setShowBookingOTP] = useState(false)
       <ChatRedirect/>
       <BookingOtp/>
       <OtpVerification />
+      <PhoneComponent/>
 
       {/* <Loader/> */}
 

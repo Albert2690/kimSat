@@ -63,7 +63,7 @@ function FacilitiesDetialed() {
         </div>
       </section>
       <div className=' p-5  sm:p-16 flex flex-col items-center sm:flex-row'>
-      <div className="p-8 md:p-16 sm:w-1/2 w-full">
+      <div className="p-8 md:p-16 sm:w-3/4 w-full">
                     <div className=" mx-auto bg-white ">
                         <h1 className="text-3xl md:text-4xl text-headingColor font-bold mb-4 md:mb-6">{department?.heading}</h1>
                         <p className="text-textColor text-justify mb-4 md:mb-6">
@@ -91,7 +91,7 @@ function FacilitiesDetialed() {
                         </p>
                     </div>
                 </div>
-                <div className="flex sm:w-1/2 w-full justify-center md:justify-end  md:w-auto">
+                <div className="flex sm:w-1/4 w-full justify-center md:justify-end  md:w-auto">
                 <div className="relative">
             {/* Video element */}
             {/* <video

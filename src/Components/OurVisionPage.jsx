@@ -1,5 +1,6 @@
 import React from 'react'
 import HospitalImage from '../assets/images/2023-05-17.jpg'
+import HospitalImage1 from '../assets/images/HOSPITALVISION.jpg'
 import { motion } from 'framer-motion'
 
 
@@ -16,7 +17,7 @@ function OurVisionPage() {
                             //  whileInView={{opacity:1,x:0}}
                             //  exit={{ opacity: 0, x: 100 }}
                             //   transition={{ duration: 1.1, ease: "easeInOut" }}
-                            src={HospitalImage} alt="KIMSAT Hospital building with people walking towards the entrance" className="rounded-lg w-[300px] h-[220px] z-20 sm:w-[400px] sm:h-[420px] md:w-[720px] md:h-[400px] shadow-lg"/>
+                            src={HospitalImage1} alt="KIMSAT Hospital building with people walking towards the entrance" className="rounded-lg w-[300px] h-[220px] z-20 sm:w-[400px] sm:h-[420px] md:w-[720px] md:h-[400px] shadow-lg"/>
                         </motion.div>
                         
                         <motion.div 
