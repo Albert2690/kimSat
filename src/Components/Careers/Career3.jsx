@@ -74,7 +74,7 @@ console.log(jobb,'jobiedddd')
         formDataToSend.append('resume', formData.resume);
         console.log(formDataToSend,'formmm')
 
-        const response = await apiInstance.post(`/content/jobs/${jobb}/apply`, formDataToSend, {
+        const response = await apiInstance.post(`/jobs/${jobb}/apply`, formDataToSend, {
           withCredentials: true,
         });
 
@@ -93,6 +93,7 @@ console.log(jobb,'jobiedddd')
           })
           setJob('')
           toast.success('Application submitted successfully!')
+          window.location.reload()
         }else{
           toast.error('Application failed to submit. Please try again')
         }

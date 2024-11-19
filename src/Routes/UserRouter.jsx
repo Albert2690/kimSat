@@ -37,7 +37,7 @@ function UserRouter() {
    <Route path='/booking/:id' element={<BookingPage/>} />
    <Route path='/career' element={<Career/>} />
    <Route path='/blog' element={<Blog/>} />
-   <Route path='/blog-detial' element={<BlogDetial/>}/>
+   <Route path='/blog-detial/:id' element={<BlogDetial/>}/>
    <Route path='/patient-profile' element={<PatientHome/>}/>
    <Route path='/patient-profile/detail/:id' element={<MrdDetailed/>} />
    <Route path='/404error' element={<NotFound/>}/>

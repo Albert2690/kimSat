@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './DepartmentDetialedPage.css'; // Ensure you have the correct file name here
 import DepartmentDetialed3 from '../Components/DepartmentComponents/DepartmentDetialed3';
 import DepartmentBanner from '../assets/images/cardiology.jpg'
 import apiInstance from '../Api';
+// import { Link } from 'react-router-dom';
 const defaultDoctorImage = "https://via.placeholder.com/150"; // Default image for doctors
 
 function DepartmentDetailedPage() {
@@ -13,6 +14,7 @@ function DepartmentDetailedPage() {
   const [department, setDepartment] = useState(null); // Initialize as null
   const [doctors, setDoctors] = useState([]);
   const [cards,setCards] = useState([])
+  const [heading,setHeading] = useState('Doctors')
 
   useEffect(() => {
     window.scroll(0,{
@@ -25,6 +27,9 @@ function DepartmentDetailedPage() {
           setDepartment(response.data.department_details);
           setDoctors(response.data.department_details.doctors);
           setCards(response.data.department_details.card);
+          if(response.data.department_details.clinical_nutrition){
+            setHeading('Nutritions')
+          }
 
         }
       } catch (error) {
@@ -65,32 +70,52 @@ function DepartmentDetailedPage() {
 
             {/* Doctors List */}
 
-            {doctors.length>0 && (   
-
-         <>
-            <h1 className="text-4xl mt-10 text-headingColor text-center font-semibold mb-8">Doctors</h1>
-            <div className="flex justify-center">
-              <div className="w-full md:w-3/4 mt-10 h-[500px] overflow-y-auto custom-scrollbar p-8">
-                <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  { doctors.map((doctor, index) => (
-                    <div key={index} className="card flex justify-center sm:justify-normal">
-                      <img
-                        src={doctor.photo || defaultDoctorImage} // Use fallback image if doctor.image is missing
-                        alt={`${doctor.name}'s portrait`}
-                        className="w-full h-56 object-cover rounded-md shadow-md"
-                      />
-                      <div className="content p-4 bg-white rounded-b-md">
-                        <h3 className="text-sm text-headingColor font-medium">{doctor.name}</h3>
-                        <p className="text-sm text-textColor font-semibold">{doctor.specializations || 'N/A'}</p>
-                        {/* <p className="text-xs text-textColor font-semibold">{doctor.Qualification || 'N/A'}</p> */}
-                      </div>
-                    </div>
-                  ))}
+            {doctors.length > 0 && (
+  <>
+    <h1 className="text-4xl mt-10 text-secondaryColor text-center font-bold mb-8">{heading}</h1>
+    <div className="flex justify-center">
+      <div className="w-full md:w-3/4 mt-10 h-[500px] overflow-y-auto custom-scrollbar p-8">
+        {/* <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center mx-auto">
+          {doctors.map((doctor, index) => (
+            <Link to={`/doctor-details/${doctor.id}`} key={index}>
+              <div className="card cursor-pointer mx-auto">
+                <img
+                  src={doctor.photo || defaultDoctorImage}
+                  alt={`${doctor.name}'s portrait`}
+                  className="w-full h-56 object-cover rounded-md shadow-md"
+                />
+                <div className="content p-4 bg-white rounded-b-md">
+                  <h3 className="text-sm text-headingColor font-medium">{doctor.name}</h3>
+                  <p className="text-sm text-textColor font-semibold">{doctor.specializations || 'N/A'}</p>
                 </div>
               </div>
-            </div>
-            </>
+            </Link>
+          ))}
+        </div> */}
+
+<div className="container flex flex-wrap gap-11 justify-center items-center mx-auto">
+  {doctors.map((doctor, index) => (
+    <Link to={`/doctor-details/${doctor.id}`} key={index}>
+      <div className="card cursor-pointer mx-auto">
+        <img
+          src={doctor.photo || defaultDoctorImage}
+          alt={`${doctor.name}'s portrait`}
+          className="w-full h-56 object-cover rounded-md shadow-md"
+        />
+        <div className="content p-4 bg-white rounded-b-md">
+          <h3 className="text-sm text-headingColor font-medium">{doctor.name}</h3>
+          <p className="text-sm text-textColor font-semibold">{doctor.specializations || 'N/A'}</p>
+        </div>
+      </div>
+    </Link>
+  ))}
+</div>
+
+      </div>
+    </div>
+  </>
 )}
+
 
           </div>
           {/* Additional Component */}

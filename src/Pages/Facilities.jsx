@@ -10,6 +10,9 @@ function Facilities() {
   const [facilites,setfacilites] = useState([])
 
   useEffect(()=>{
+    window.scroll(0,{
+      behaviour:'smooth'
+    })
       const handleApi = async()=>{
         try{
           const response = await apiInstance.get('facilities/list')
@@ -37,7 +40,7 @@ function Facilities() {
         <img src={KimsatImage} alt="" className=' object-cover ' />
       </div>
     </section>
-    <h1 className="text-4xl sm:text-6xl font-bold text-headingColor text-center mt-8">Our Facilities</h1>
+    <h1 className="text-4xl sm:text-6xl font-bold text-secondaryColor text-center mt-8">Our Facilities</h1>
     <div className='p-5  sm:p-16 '>
         <Facilities1 facilities={facilites} />
     </div>

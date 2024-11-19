@@ -15,7 +15,7 @@ function Career() {
     },[])
     const handleApi = async () => {
       try {
-        const response = await apiInstance.get('/content/jobs');
+        const response = await apiInstance.get('/jobs');
         if (response.data.success) {
           setjobs(response.data.job_openings);
         

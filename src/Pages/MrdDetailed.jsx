@@ -39,7 +39,7 @@ function MrdDetailed() {
     handleApi();
   }, [id]);
 
-  function handleDownload(url) {
+  function handleDownload(url,user) {
     fetch(url, {
       method: 'GET',
       headers: {
@@ -50,7 +50,7 @@ function MrdDetailed() {
       .then((blob) => {
         const link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);
-        link.download = 'kimsat lab-report.pdf'; // Customize the file name
+        link.download = `kimsat lab-report (${user}).pdf`; // Customize the file name
         document.body.appendChild(link);
         link.click();
         link.remove();
@@ -102,7 +102,7 @@ function MrdDetailed() {
                       View Report
                     </a>
                     <button
-                      onClick={() => handleDownload(report.report_file)}
+                      onClick={() => handleDownload(report.report_file,user.name)}
                       className="border text-xs sm:text-sm border-secondaryColor text-secondaryColor px-4 py-2 rounded-full"
                     >
                       <i className="fas fa-download"></i> Download Report

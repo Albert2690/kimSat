@@ -23,7 +23,7 @@ export default function OtpComponent({ otp, setOtp }) {
     setIsResendDisabled(true); // Disable the resend button
     setTimer(90); // Reset the timer
     const interval = setInterval(() => {
-      setTimer((prev) => {
+      setTimer((prev) => {  
         if (prev <= 1) {
           clearInterval(interval);
           setIsResendDisabled(false); // Enable resend after timer ends
@@ -97,7 +97,7 @@ export default function OtpComponent({ otp, setOtp }) {
         if (otpResponse.data.token.access) {
           localStorage.setItem("userToken", otpResponse.data.token.access);
         }
-        setOtp(false);
+        setOtp(Array(4).fill(""));
         navigate("/patient-profile");
       } else {
         toast.error(otpResponse.data.error);

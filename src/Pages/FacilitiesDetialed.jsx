@@ -2,7 +2,7 @@ import React,{useState,useRef,useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import apiInstance from '../Api';
 import KimsatImage from '../assets/images/2023-08-07.jpg'
-import KimSat from '../assets/images/Bazooka - Official Teaser ｜ Mammootty ｜ Gautham Vasudev Menon ｜ Deeno Dennis.mp4'
+// import KimSat from '../assets/images/Bazooka - Official Teaser ｜ Mammootty ｜ Gautham Vasudev Menon ｜ Deeno Dennis.mp4'
 import { toast } from 'react-toastify';
 // C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\
 function FacilitiesDetialed() {
@@ -59,7 +59,7 @@ function FacilitiesDetialed() {
   
     <section className='mt-0 sm:mt-[-40px]'>
         <div className="flex justify-center">
-          <img src={department?.banner} alt="" className='sm:w-screen sm:h-[450px] w-full h-[300px] object-cover ' />
+          <img src={department?.banner} alt="" className='sm:w-screen sm:h-[450px] w-full  object-cover ' />
         </div>
       </section>
       <div className=' p-5  sm:p-16 flex flex-col items-center sm:flex-row'>

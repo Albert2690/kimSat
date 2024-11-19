@@ -20,7 +20,7 @@ const departments = [
   { name: "Neurosurgery", icon: faBrain },
   { name: "Pediatrics", icon: faChild },
   { name: "Cardiology", icon: faHeartbeat },
-  { name: "Gynecology", icon: faVenus },
+  { name: "Gynaecology", icon: faVenus },
   { name: "Endocrinology", icon: faDna },
   { name: "Gastroenterology", icon: faCut },
   { name: "Dermatology", icon: faHandSparkles },

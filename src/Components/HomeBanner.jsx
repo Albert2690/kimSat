@@ -1,22 +1,37 @@
 import React, { useEffect, useState } from 'react';
-
-import KimsatBanner1 from '../assets/images/cover 1.jpg';
-import KimsatBanner2 from '../assets/images/cover 2.jpg';
-import KimsatBanner3 from '../assets/images/cover 3.jpg';
-import KimsatBanner4 from '../assets/images/home banner template (1).jpg'
-// "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\"
+import KimsatBanner1 from '../assets/images/home dialysis.jpg';
+import KimsatBanner2 from '../assets/images/home hospital.jpg';
+import KimsatBanner4 from '../assets/images/home banner template (1).jpg';
+import mobileViewBanner1 from '../assets/images/phonesizehomebanner2.jpg';
+import mobileViewBanner2 from '../assets/images/phonesizehomebanner3.jpg';
+import mobileViewBanner3 from '../assets/images/phonesizebanner1 (2).jpg';
+// "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\phonesizehomebanner2.jpg"
+// "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\phonesizehomebanner3.jpg"
+// "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\phonesizebanner1 (2).jpg"
+// "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\phoneappointment.jpg"
+// "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\phonesizedoctorsbanner.jpg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function HomeBanner() {
-  const images = [KimsatBanner1, KimsatBanner2, KimsatBanner3,KimsatBanner4];
+  const desktopImages = [KimsatBanner1, KimsatBanner2, KimsatBanner4];
+  const mobileImages = [mobileViewBanner1, mobileViewBanner2, mobileViewBanner3];
 
-  // Add clones for the infinite loop effect
-  const totalSlides = images.length + 2; // 2 extra for clone slides
-  const [activeIndex, setActiveIndex] = useState(1); // Start with the first real slide
+  const [activeIndex, setActiveIndex] = useState(1);
   const [transition, setTransition] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  // Clone first and last slides for infinite loop
+  // Update `isMobile` state on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const images = isMobile ? mobileImages : desktopImages;
+  const totalSlides = images.length + 2;
   const clonedImages = [images[images.length - 1], ...images, images[0]];
 
   useEffect(() => {
@@ -29,9 +44,8 @@ function HomeBanner() {
 
   const handleNext = () => {
     if (activeIndex === totalSlides - 1) {
-      // When reaching the last cloned slide, reset to first real slide without transition
       setTransition(false);
-      setActiveIndex(1); // Go to the first real slide
+      setActiveIndex(1);
     } else {
       setTransition(true);
       setActiveIndex((prevIndex) => prevIndex + 1);
@@ -40,9 +54,8 @@ function HomeBanner() {
 
   const handlePrev = () => {
     if (activeIndex === 0) {
-      // When reaching the first cloned slide, reset to last real slide without transition
       setTransition(false);
-      setActiveIndex(totalSlides - 2); // Go to the last real slide
+      setActiveIndex(totalSlides - 2);
     } else {
       setTransition(true);
       setActiveIndex((prevIndex) => prevIndex - 1);
@@ -62,13 +75,12 @@ function HomeBanner() {
 
   const handleTouchEnd = () => {
     if (touchEndX < touchStartX - 50) {
-      handleNext(); // Swiped left
+      handleNext();
     } else if (touchEndX > touchStartX + 50) {
-      handlePrev(); // Swiped right
+      handlePrev();
     }
   };
 
-  // Handle smooth transition reset when sliding infinitely
   useEffect(() => {
     if (!transition) {
       const timeout = setTimeout(() => setTransition(true), 50);
@@ -78,7 +90,6 @@ function HomeBanner() {
 
   return (
     <div className="relative w-full h-[400px] md:h-[600px] lg:h-[700px] overflow-hidden">
-      {/* Slide container */}
       <div
         className={`flex ${transition ? 'transition-transform duration-1000 ease-in-out' : ''}`}
         style={{
@@ -86,26 +97,27 @@ function HomeBanner() {
         }}
       >
         {clonedImages.map((src, index) => (
-          <div 
-           onTouchStart={handleTouchStart}
-           onTouchMove={handleTouchMove}
-           onTouchEnd={handleTouchEnd}
-          key={index} className="w-full flex-shrink-0">
+          <div
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            key={index}
+            className="w-full flex-shrink-0"
+          >
             <img
               src={src}
-              className="w-full  h-[400px] md:h-[600px] lg:h-[700px] object-cover"
+              className="w-full object-cover"
               alt={`Slide ${index + 1}`}
             />
           </div>
         ))}
       </div>
 
-      {/* Indicators */}
       <div className="absolute z-30 flex space-x-3 bottom-5 left-1/2 transform -translate-x-1/2">
         {images.map((_, index) => (
           <button
             key={index}
-            onClick={() => setActiveIndex(index + 1)} // Adjust for cloned slides
+            onClick={() => setActiveIndex(index + 1)}
             className={`w-3 h-3 rounded-full ${
               index + 1 === activeIndex || (activeIndex === 0 && index === images.length - 1)
                 ? 'bg-white'
@@ -116,7 +128,6 @@ function HomeBanner() {
         ))}
       </div>
 
-      {/* Navigation buttons */}
       <button
         onClick={handlePrev}
         className="absolute left-2 top-1/2 transform -translate-y-1/2 text-textColor p-3 rounded-full shadow-lg transition-all duration-300"

@@ -15,6 +15,13 @@ import DoctorImage4 from '../../assets/images/RAJESH R KIMSAT ADMIN OFFICER.jpg'
 import DoctorImage5 from '../../assets/images/NR ANI KIMSAT.jpg'
 import DoctorImage6 from '../../assets/images/CHARIMAN VIKRAMAN.jpg'
 import DoctorImage7 from '../../assets/images/DR. MOHAMMED HUSSAIN.jpg'
+import DoctorImage8 from '../../assets/images/Dr. v midhun president.jpg'
+import DoctorImage9 from '../../assets/images/jayapalan.jpg'
+import DoctorImage10 from '../../assets/images/suresh s pillai.jpg'
+import DoctorImage11 from '../../assets/images/r latha.jpg'
+
+
+
 import DefaultImage from '../../assets/images/pngegg.png'
 
 
@@ -28,14 +35,14 @@ import DefaultImage from '../../assets/images/pngegg.png'
 
 const members = [
   { name: "S. VIKRAMAN", title: "Chairman" ,img:DoctorImage6},
-  { name: "DR. V. MIDHUN", title: "President SCRI",img:DefaultImage },
+  { name: "DR. V. MIDHUN", title: "President SCRI",img:DoctorImage8 },
   { name: "P. Ashokan", title: "Secratary",img:DoctorImage3 },
   { name: "P. PRATHAPAN", title: "Vice President SCRI",img:DoctorImage2 },
   { name: "ADV. T.S. PRABHULLA KHOSH", title: "",img:DefaultImage },
   { name: "SHIBU KADAKKAL", title: "",img:DoctorImage1 },
   { name: "N.R. ANI", title: "",img:DoctorImage5 },
-  { name: "R. LATHA", title: "" ,img:DefaultImage},
-  { name: "JAYAPALAN", title: "",img:DefaultImage },
+  { name: "R. LATHA", title: "" ,img:DoctorImage11},
+  { name: "JAYAPALAN", title: "",img:DoctorImage9 },
   // { name: "DR. SURESH S. PILLAI", title: "" ,img:DefaultImage},
 ];
 const GoverningBody = [
@@ -203,7 +210,7 @@ const About3 = () => {
  <div className="relative group">
    <img
      className="w-[300px] h-[300px]"
-     src={DefaultImage}
+     src={DoctorImage10}
      alt="Portrait of a person in a suit"
    />
    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>

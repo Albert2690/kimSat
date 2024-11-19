@@ -1,6 +1,7 @@
 import React from 'react'
 import kimsatLogo from '../../assets/Kimsat Logo/KIMSAT FINAL LOGO-2.png'
 import { faInstagram, faFacebook, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faArrowRight,
@@ -73,11 +74,14 @@ function UserFooter() {
     <div className="w-full md:w-1/3 mb-6 md:mb-0">
         <h2 className="text-xl text-headingColor font-bold mb-4">Quick Links</h2>
         <ul className="space-y-2">
-            <li><a href="#" className="text-textColor font-semibold">About Kimsat</a></li>
-            <li><a href="#" className="text-textColor font-semibold">Specialities</a></li>
-            <li><a href="#" className="text-textColor font-semibold">Our Departments</a></li>
-            <li><a href="#" className="text-textColor font-semibold">Support Services</a></li>
-            <li><a href="#" className="text-textColor font-semibold">Careers</a></li>
+            
+        <Link to={'/about'}> <li className="text-textColor cursor-pointer font-semibold">About Kimsat</li></Link>
+        <Link to={'/facilites'}>   <li className="text-textColor cursor-pointer font-semibold">Our Facilities</li></Link>
+        <Link to={'/departments'}>  <li className="text-textColor cursor-pointer font-semibold">Our Departments</li></Link>
+        <Link to={'/contact-us'}>  <li className="text-textColor cursor-pointer font-semibold">Support Services</li></Link>
+        <Link to={'/career'}> <li className="text-textColor cursor-pointer font-semibold">Careers</li></Link>
+
+       
         </ul>
     </div>
     <div className="w-full md:w-1/3">
@@ -93,7 +97,7 @@ function UserFooter() {
                 <input type="email" placeholder="Enter email address" className="p-2 border border-textColor rounded-full focus:border-secondaryColor w-full" />
                 <FontAwesomeIcon
                 icon={faArrowRight}
-                className="p-3 text-white absolute top-0 right-0 bg-secondaryColor  rounded-full transform transition-transform duration-1000 group-hover:translate-x-2"
+                className="p-3 text-white absolute top-0 right-0 bg-secondaryColor cursor-pointer  rounded-full transform transition-transform duration-1000 group-hover:translate-x-2"
               />
             </div>
             <p className="text-textColor font-semibold  text-sm mt-5">We Never Spam You! 100% Privacy.</p>

@@ -152,11 +152,13 @@ function UserHeader() {
     >
       <header className="flex justify-around ml-0  sm:ml-14 items-center   py-5 border-b">
         <div className="flex lg:mr-[70px] items-center">
+          <Link to={'/'}>
           <img
             src={kimsatLogo}
             alt="KIMSAT Hospital Logo"
             className=" w-[100px] h-[40px] sm:w-[145px]  sm:h-[60px]"
           />
+          </Link>
         </div>
         <div className="hidden sm:flex items-center justify-center space-x-9  ">
           <div className=" flex flex-row gap-3">
@@ -186,7 +188,7 @@ function UserHeader() {
           <div>
             {/* <div className="flex flex-row justify-between"> */}
 
-            <div className="flex  space-x-2 justify-center ml-12 items-center  ">
+            <div className="flex  space-x-2 justify-center w-full  items-center  ">
               <FontAwesomeIcon
                 icon={faPhoneVolume}
                 className="text-secondaryColor  text-lg"
@@ -198,7 +200,7 @@ function UserHeader() {
                 href="tel:+91 474 298 203"
                 className="text-redColor font-semibold"
               >
-                +91 474 298 203
+                474 298 2035
               </a>
             </div>
           </div>
@@ -231,7 +233,7 @@ function UserHeader() {
               />
 
               {/* <i class="fa-solid fa-house-blank"></i> */}
-              <span className="text-secondaryColor text-sm m-[-2px] item-start font-semibold cursor-pointer">
+              <span className="text-secondaryColor text-sm  item-start font-semibold cursor-pointer">
                 {" "}
                 Patient Login
               </span>
@@ -366,7 +368,7 @@ function UserHeader() {
             </div>
           ) : (
             <div
-              onClick={() => setShowLogin(true)}
+            onClick={() => {setShowLogin(true),setMenuOpen(!menuOpen)}}
               className="flex flex-row sm:hidden cursor-pointer space-x-4 ml-1   items-center"
             >
               <FontAwesomeIcon

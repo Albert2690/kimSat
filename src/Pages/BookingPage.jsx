@@ -1,8 +1,11 @@
 // import React, { useState, useEffect } from "react";
 // import coverImage from '../assets/images/medium-shot-smiley-senior-couple-with-laptop.jpg';
 import coverImage from "../assets/images/medium-shot-smiley-senior-couple-with-laptop.jpg";
+import bookingImage from "../assets/images/bookanappointment (3).jpg"
+import BookingMobileBanner from '../assets/images/phoneappointment.jpg'
 import apiInstance from "../Api";
 import { toast } from "react-toastify";
+// import { useParams } from "react-router-dom";
 import { createContext, useState, useContext, useEffect } from 'react';
 import { BookingContext } from '../Layouts/Layout';
 import { useParams } from "react-router-dom";
@@ -11,6 +14,7 @@ import { useParams } from "react-router-dom";
 function BookingPage() {
   const {showLogin,setShowLogin,showOTP,setShowOTP,showBookingOTP,setShowBookingOTP} = useContext(BookingContext)
   const { id } = useParams();
+  const [doctor,setDoctor] = useState()
   const [formData, setFormData] = useState({
     firstName: "",
     id:'',
@@ -37,7 +41,22 @@ function BookingPage() {
   useEffect(() => {
     const loginUSer = localStorage.getItem("mobile");
     setLoginUser(loginUSer);
-  },[]);
+    const handleDoctorApi = async () => {
+      try {
+        const otpResponse = await apiInstance.get(`doctors/${id}`, {
+          withCredentials: true,
+        });
+        if (otpResponse.data.success) {
+          setDoctor(otpResponse.data.data);
+        } else {
+          toast.error(otpResponse.data.error);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    handleDoctorApi()
+  },[id]);
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -92,7 +111,7 @@ function BookingPage() {
       isValid = false;
     }
 
-    if (formData.length > 0 && formData.mrd.length !== 12) {
+    if (formData.mrd.length > 0 && formData.mrd.length !== 12) {
       newError.mrd = "Enter a valid MRD number.";
       isValid = false;
     }
@@ -172,19 +191,18 @@ function BookingPage() {
   const handleGenderChange = (e) => {
     setFormData({ ...formData, gender: e.target.value });
   };
-
+console.log(doctor,'doctor from booking page ')
   // console.log(error, "errors");
   return (
     <>
       <section className="bg-gray-100 relative mt-[-40px] py-12">
-        <img
-          src={coverImage}
-          alt="Header Image"
-          className="rounded-lg shadow-lg mb-6 w-full h-[400px] sm:h-[500px] object-cover"
-        />
-        <h1 className="sm:text-6xl text-3xl absolute top-1/2 right-10 font-extrabold text-white">
+      <picture>
+            <source media="(min-width: 640px)" srcSet={bookingImage} />
+            <img src={BookingMobileBanner} alt="Doctor banner" className="w-full object-cover" />
+          </picture>
+        {/* <h1 className="sm:text-6xl text-3xl absolute top-1/2 right-10 font-extrabold text-secondaryColor">
           Book an Appointment
-        </h1>
+        </h1> */}
       </section>
 
       <section className="bg-purple-50 py-12">
@@ -203,7 +221,7 @@ function BookingPage() {
                       htmlFor="firstName"
                       className="block text-sm font-medium text-secondaryColor"
                     >
-                      First Name
+                      Name
                       <span className="text-redColor">*</span>
                     </label>
                     <input
@@ -267,9 +285,13 @@ function BookingPage() {
                       className="mt-1 p-3 block w-full border text-textColor rounded-md shadow-sm border-thirdColor focus:border-secondaryColor active:border-secondaryColor focus:ring-0"
                     >
                       <option>Select</option>
-                      <option value={"mon"}>MON</option>
+                      {/* <option value={"mon"}>MON</option>  
                       <option value={"tue"}>TUE</option>
-                      <option value={"wed"}>WED</option>
+                      <option value={"wed"}>WED</option> */}
+
+                      {doctor?.schedules.map((item,index)=>(
+                        <option value={item.day_of_week}>{item.day_of_week}</option>
+                      ))}
                     </select>
                     {error.appointmentDate && (
                       <p className="text-redColor text-xs mt-1">

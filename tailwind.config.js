@@ -15,6 +15,10 @@ export default {
 
        
       }
+      ,
+      screens: {
+        'md-lg': { 'min': '1000px', 'max': '1400px' }, // Custom breakpoint between 1000px and 1400px
+      },
     },
   },
   plugins: [

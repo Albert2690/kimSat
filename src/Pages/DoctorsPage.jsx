@@ -1,37 +1,30 @@
-import React, { useEffect } from 'react'
-import DoctorsList from '../Components/DoctorComponents/DoctorsList'
-import DoctorPageImage from  '../../src/assets/images/KIMSATgeneral.jpg'
-
-import Login from '../Components/Login'
-import imagee from '../assets/images/WhatsApp Image 2024-10-01 at 11.07.30 AM.jpeg'
-// "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\KIMSATgeneral.jpg"
+import React, { useEffect } from 'react';
+import DoctorsList from '../Components/DoctorComponents/DoctorsList';
+import DoctorBanner from '../assets/images/doctorsbanner.jpg';
+import DoctorMobileBanner from '../assets/images/phonesizedoctorsbanner.jpg';
 
 function DoctorsPage() {
   useEffect(() => {
-    window.scroll(0,{
-      behaviour:'smooth'
-    })
+    window.scroll(0, {
+      behavior: 'smooth'
+    });
+
     if ("Notification" in window) {
-      // If permission is already granted, send the notification
       if (Notification.permission === "granted") {
-        console.log('granteedd')
         const notification = new Notification("Hello!", {
           body: "This is a notification from our website.",
-          icon: "/path/to/icon.png", // Replace with the actual icon path
+          icon: "/path/to/icon.png",
         });
 
-        // You can add click event listeners for user interactions
         notification.onclick = function () {
-          window.open("https://youtube.com"); // Example: open your website on click
+          window.open("https://youtube.com");
         };
       } else if (Notification.permission !== "denied") {
-        // If permission is not denied, ask the user for permission
         Notification.requestPermission().then((permission) => {
           if (permission === "granted") {
-            // Permission was granted
             const notification = new Notification("Welcome!", {
               body: "Thank you for enabling notifications!",
-              icon: "/path/to/icon.png", // Replace with the actual icon path
+              icon: "/path/to/icon.png",
             });
 
             notification.onclick = function () {
@@ -42,17 +35,20 @@ function DoctorsPage() {
       }
     }
   }, []);
+
   return (
     <>
-      <section className='mt-0 '>
-      <div className="flex justify-center">
-        <img src={DoctorPageImage} alt="" className='  object-cover' />
-      </div>
-    </section>
-    <DoctorsList/>
-    
+      <section className='mt-0'>
+        <div className="flex justify-center">
+          <picture>
+            <source media="(min-width: 640px)" srcSet={DoctorBanner} />
+            <img src={DoctorMobileBanner} alt="Doctor banner" className="w-full object-cover" />
+          </picture>
+        </div>
+      </section>
+      <DoctorsList />
     </>
-  )
+  );
 }
 
-export default DoctorsPage
+export default DoctorsPage;

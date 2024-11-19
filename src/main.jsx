@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')).render(
   <>
  
     <App />
-    <ToastContainer transition={Slide} />
+    <ToastContainer position="bottom-center" transition={Slide} />
     </>
   // </StrictMode>,
 )

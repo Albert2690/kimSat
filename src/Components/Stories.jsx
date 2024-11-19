@@ -1,59 +1,80 @@
 import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 import StoryImage from '../assets/images/Gallery6.png';
 import StoryImage1 from '../assets/images/2023-05-17.jpg';
+import apiInstance from '../Api';
+// import { Link } from 'react-router-dom';
 import './Stories.css';
 
 function Stories() {
   const [currentStartIndex, setCurrentStartIndex] = useState(0);
-  const stories = [
-    {
-      img: StoryImage,
-      title: ' KIMSAT',
-      description: 'ആശ Hospitals and patient stories',
-      date: 'ജൂണ്‍ 10 ന്',
-      video: false,
-    },
-    {
-      img: StoryImage1,
-      title: ' KIMSAT',
-      description: 'ആശ Hospitals and patient stories',
-      date: 'ജൂണ്‍ 10 ന്',
-      video: false,
-    },
-    {
-        img: StoryImage1,
-        title: ' KIMSAT',
-        description: 'ആശ Hospitals and patient stories',
-        date: 'ജൂണ്‍ 10 ന്',
-        video: false,
-      },{
-        img: StoryImage,
-        title: ' KIMSAT',
-        description: 'ആശ Hospitals and patient stories',
-        date: 'ജൂണ്‍ 10 ന്',
-        video: false,
-      },{
-        img: StoryImage,
-        title: ' KIMSAT',
-        description: 'ആശ Hospitals and patient stories',
-        date: 'ജൂണ്‍ 10 ന്',
-        video: false,
-      },{
-        img: StoryImage1,
-        title: ' KIMSAT',
-        description: 'ആശ Hospitals and patient stories',
-        date: 'ജൂണ്‍ 10 ന്',
-        video: false,
-      },{
-        img: StoryImage,
-        title: ' KIMSAT',
-        description: 'ആശ Hospitals and patient stories',
-        date: 'ജൂണ്‍ 10 ന്',
-        video: false,
-      },
+  // const stories = [
+  //   {
+  //     img: StoryImage,
+  //     title: ' KIMSAT',
+  //     description: ' Hospitals and patient stories',
+  //     date: 'ജൂണ്‍ 10 ന്',
+  //     video: false,
+  //   },
+  //   {
+  //     img: StoryImage1,
+  //     title: ' KIMSAT',
+  //     description: ' Hospitals and patient stories',
+  //     date: 'ജൂണ്‍ 10 ന്',
+  //     video: false,
+  //   },
+  //   {
+  //       img: StoryImage1,
+  //       title: ' KIMSAT',
+  //       description: ' Hospitals and patient stories',
+  //       date: 'ജൂണ്‍ 10 ന്',
+  //       video: false,
+  //     },{
+  //       img: StoryImage,
+  //       title: ' KIMSAT',
+  //       description: ' Hospitals and patient stories',
+  //       date: 'ജൂണ്‍ 10 ന്',
+  //       video: false,
+  //     },{
+  //       img: StoryImage,
+  //       title: ' KIMSAT',
+  //       description: ' Hospitals and patient stories',
+  //       date: 'ജൂണ്‍ 10 ന്',
+  //       video: false,
+  //     },{
+  //       img: StoryImage1,
+  //       title: ' KIMSAT',
+  //       description: ' Hospitals and patient stories',
+  //       date: 'ജൂണ്‍ 10 ന്',
+  //       video: false,
+  //     },{
+  //       img: StoryImage,
+  //       title: ' KIMSAT',
+  //       description: ' Hospitals and patient stories',
+  //       date: 'ജൂണ്‍ 10 ന്',
+  //       video: false,
+  //     },
     
-  ];
+  // ];
+  const [stories, setStories] = useState([]);
 
+  const apicall = async () => {
+      try {
+          const response = await apiInstance.get('/blog');
+
+          if (response.data.success) {
+              setStories(response.data.data);
+          } else {
+              console.error('API call successful but no data returned:', response);
+          }
+      } catch (err) {
+          console.error('Error fetching blog data:', err);
+      }
+  };
+
+  useEffect(() => {
+      apicall();
+  }, []);
   useEffect(() => {
     const interval = setInterval(() => {
       nextStory();
@@ -97,7 +118,31 @@ function Stories() {
     setCurrentStartIndex(clickedIndex >= stories.length ? stories.length - 1 : clickedIndex); 
   };
 
+  console.log(stories,'storiess')
+
+  const formatDate = (dateStr) => {
+    try {
+        const dateObj = new Date(dateStr);
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true,
+        };
+        return new Intl.DateTimeFormat('en-US', options).format(dateObj);
+    } catch (error) {
+        console.error('Error formatting date:', error);
+        return 'Invalid date';
+    }
+};
+if (stories.length === 0) {
+  return <p>No stories available</p>;
+}
   return (
+   
+    
     <div className="p-8">
       <div className="flex justify-between items-center mb-4">
         <div>
@@ -117,12 +162,17 @@ function Stories() {
       <div className="relative my-16 overflow-hidden scrollbar-custom">
         <div className="flex gap-5 transition-transform duration-500">
           {displayedStories.map((story, index) => (
-            <div key={index} className="w-full md:w-1/3 flex-shrink-0">
-              <img src={story.img} alt={story.title} className="w-full h-48 object-cover mb-2" />
-              <h2 className="font-bold text-lg md:text-xl">{story.title}</h2>
-              <p className="text-gray-600">{story.description}</p>
-              {story.video && <p className="text-red-600">Watch Video</p>}
-              <p className="text-gray-600">{story.date}</p>
+
+
+            <div key={index} className="w-full md:w-1/3 cursor-pointer flex-shrink-0">
+              <Link to={`/blog-detial/${story.id}`}>
+              <img src={story?.banner_image} alt={'image unavaiable'} className="w-full h-48 object-cover mb-2" />
+              <h2 className="font-bold text-lg md:text-xl">{story?.heading}</h2>
+              {/* <p className="text-gray-600">{story.description}</p>
+              {story.video && <p className="text-red-600">Watch Video</p>} */}
+              <p className="text-gray-600">{formatDate(story?.date)}</p>
+            </Link>
+
             </div>
           ))}
         </div>

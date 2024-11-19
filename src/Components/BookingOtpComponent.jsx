@@ -6,14 +6,14 @@ import { toast } from "react-toastify";
 
 export default function BookingOtpComponent({ otp, setOtp }) {
   const navigate = useNavigate();
-  const { showOTP, setShowOTP } = useContext(BookingContext);
+  const { showOTP, setShowOTP,setShowBookingOTP,showBookingOTP } = useContext(BookingContext);
   const inputRefs = useRef([]); 
 
   useEffect(() => {
     if (showOTP) {
       inputRefs.current[0]?.focus(); 
     }
-  }, [showOTP]);
+  }, [showBookingOTP]);
 
   const handleKeyDown = (e) => {
     
@@ -89,7 +89,7 @@ export default function BookingOtpComponent({ otp, setOtp }) {
         localStorage.removeItem('otp_mobile')
         const formData =   JSON.parse(localStorage.getItem('formdata'));
 
-        setShowOTP(false);
+        setShowBookingOTP(false);
         const booking = await apiInstance.post('appointments/create',{formData,phone_number:mobile},{withCredentials:true})
 
         // console.log(otpResponse.data.token.access);
