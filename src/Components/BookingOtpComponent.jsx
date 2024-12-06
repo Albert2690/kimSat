@@ -116,7 +116,7 @@ export default function BookingOtpComponent({ otp, setOtp }) {
        
       }
     } catch (error) {
-      toast.error('Internal server Occured')
+      toast.error(error.response.data.error);
       console.error("Error verifying OTP:", error);
      
     }
