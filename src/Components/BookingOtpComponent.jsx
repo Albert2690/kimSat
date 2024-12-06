@@ -99,7 +99,7 @@ export default function BookingOtpComponent({ otp, setOtp }) {
 
         }
         if(booking.data.success){
-          toast.success("Appoinment  booked successfully");
+          toast.success("Thank you for initiating your appointment booking! Our team will get in touch with you shortly.");
           localStorage.removeItem('formdata')
          
             navigate("/patient-profile"); 

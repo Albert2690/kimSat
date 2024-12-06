@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import Department1 from "../Components/DepartmentComponents/Department1";
 import apiInstance from "../Api";
 import DepartmentPageImage from "../assets/images/WhatsApp Image 2024-10-02 at 11.29.28 AM.jpeg";
-import KimsatBanner4 from '../assets/images/WhatsApp Image 2024-10-22 at 3.52.00 PM.jpeg'
+import KimsatBanner4 from '../assets/images/departmentbanner.jpg'
 
 
 function DepartmentPage() {

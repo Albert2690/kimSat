@@ -32,7 +32,7 @@ function Career() {
    <div className="w-full relative">
         <img src={CareerImage} alt="Medical team in an operating room" className="w-full h-[450px] object-cover" />
         <div>
-          <h1 className=' absolute top-1/4 left-20 text-4xl sm:text-8xl font-semibold text-secondaryColor'>Careers</h1>
+          <h1 className=' absolute top-1/2 left-20 text-4xl sm:text-8xl font-bold text-secondaryColor'>Careers</h1>
         </div>
 
     </div>

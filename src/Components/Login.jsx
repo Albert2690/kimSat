@@ -56,7 +56,8 @@ function Login() {
           toast.error(response.data.error)
         }
       }catch(err){
-        toast.error("Internal  Server Error")
+        console.log(err.message,'error login')
+        toast.error(err.response.data.error)
 
       }
        

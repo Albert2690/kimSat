@@ -38,7 +38,7 @@ const departments = [
   
   
   { name: "Pharmacy", icon: faPills },
-  { name: "Central Laboratory & Biochemistry", icon: faFlask },
+  { name: "Central Laboratory & Microbiology", icon: faFlask },
   { name: "Transfusion Medicine", icon: faVial },
  
   { name: "Physiotherapy", icon: faDumbbell },

@@ -1,5 +1,5 @@
 import React from 'react'
-import SurgeonImage from '../../assets/images/aboutbanner.jpg'
+import SurgeonImage from '../../assets/images/aboutbanner (2).jpg'
 import SurgeonImage1 from '../../assets/images/aboutbanner.jpg'
 
 import './About1.css'

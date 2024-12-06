@@ -37,7 +37,7 @@ function HomeBanner() {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 4000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, [activeIndex]);

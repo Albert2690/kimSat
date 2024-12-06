@@ -140,7 +140,7 @@ function DoctorsList() {
                       className="mx-auto mb-4 object-cover"
                     />
                     <h2 className="text-lg text-headingColor font-medium">
-                      {doctor.user.username}
+                      {`Dr. ${doctor.user.username}`}
                     </h2>
                     <p className="text-sm font-medium text-textColor">
                       {doctor.specialization[0]?.name}

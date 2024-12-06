@@ -3,7 +3,9 @@
 import coverImage from "../assets/images/medium-shot-smiley-senior-couple-with-laptop.jpg";
 import bookingImage from "../assets/images/bookanappointment (3).jpg"
 import BookingMobileBanner from '../assets/images/phoneappointment.jpg'
+import Loader from "../Components/Loader/Loader";
 import apiInstance from "../Api";
+import Loader1 from "../Components/Loader/Loader1";
 import { toast } from "react-toastify";
 // import { useParams } from "react-router-dom";
 import { createContext, useState, useContext, useEffect } from 'react';
@@ -15,6 +17,7 @@ function BookingPage() {
   const {showLogin,setShowLogin,showOTP,setShowOTP,showBookingOTP,setShowBookingOTP} = useContext(BookingContext)
   const { id } = useParams();
   const [doctor,setDoctor] = useState()
+  const [isLoading,setIsLoading]= useState(false)
   const [formData, setFormData] = useState({
     firstName: "",
     id:'',
@@ -111,7 +114,7 @@ function BookingPage() {
       isValid = false;
     }
 
-    if (formData.mrd.length > 0 && formData.mrd.length !== 12) {
+    if (formData.mrd.length > 0 && formData.mrd.length !== 6) {
       newError.mrd = "Enter a valid MRD number.";
       isValid = false;
     }
@@ -130,6 +133,8 @@ function BookingPage() {
 
     if (isValid) {
       // console.log(formData,'formdata from booking page ')
+    setIsLoading(true)
+
       formData.id = id
       if(loginUser){
         formData.mobile=loginUser
@@ -140,9 +145,13 @@ function BookingPage() {
         })
         if(response.data.success){
           // console.log(response.data,'from booking ')
-          toast.success('Appoinment Booked Successfully')
+          toast.success('Thank you for initiating your appointment booking! Our team will get in touch with you shortly.')
+          setTimeout(()=>{
+            setIsLoading(false)
+        },1500)
         }else{
           toast.error(response.data.error)
+          setIsLoading(false)
           // console.log(response.data.error)
         }
       }else{
@@ -165,6 +174,8 @@ function BookingPage() {
 
       }
       // Reset form
+      setIsLoading(false)
+
       setFormData({
         firstName: "",
         lastName: "",
@@ -182,6 +193,7 @@ function BookingPage() {
     
     }
   }catch(err){
+    setIsLoading(false)
     console.log(err)
     }
     
@@ -509,12 +521,18 @@ console.log(doctor,'doctor from booking page ')
               </div>
 
               {/* Submit Button */}
-              <button
+              {isLoading ? (
+                <Loader/>
+              ):(
+                <button
                 type="submit"
+                disabled={isLoading}
                 className="py-3 px-4 bg-thirdColor text-white font-semibold rounded-md hover:bg-secondaryColor transition duration-200"
               >
-                Confirm Appointment
+              Confirm Appointment
               </button>
+              )}
+            
             </form>
           </div>
         </div>

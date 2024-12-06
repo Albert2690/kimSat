@@ -33,10 +33,10 @@ const facilities = [
   { name: "Digital X-Ray", icon: faXRay },
   { name: "Dialysis Unit", icon: faTint },
   { name: "Labour Room Complex", icon: faBed },
-  { name: "Cardiac Operation Theatre (OT)", icon: faHeart },
-  { name: "Newborn ICCU (Intensive Care Unit)", icon: faHospital },
+  { name: "Operation Theatre (OT)", icon: faHeart },
+  { name: "NEO NATAL ICU (Intensive Care Unit)", icon: faHospital },
   { name: "SICU & Post-Operative Ward", icon: faProcedures },
-  { name: "CT ICCU (Coronary Care Unit)", icon: faHeart },
+  { name: "CCU (Coronary Care Unit)", icon: faHeart },
 ];
 
 function FacilitiesModal() {

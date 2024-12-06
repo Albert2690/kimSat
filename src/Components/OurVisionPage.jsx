@@ -30,7 +30,7 @@ function OurVisionPage() {
                             <h1 className="text-4xl font-bold text-headingColor mb-4">Our Vision</h1>
                             <h2 className="text-xl text-secondaryColor mb-4">Advanced & Affordable Medical Care</h2>
                             <p className="text-textColor leading-16 text-start text-xs sm:text-sm  mb-4">
-                                The institution stands with a vision to offer advanced medical care to people in all walks of life at an affordable cost. KIMSAT will soon be among the best multi-specialty co-operative hospitals in Kerala.
+                                The institution stands with a vision to offer advanced medical care to people in all walks of life at an affordable cost. KIMSAT will soon be among the best super-specialty co-operative hospitals in Kerala.
                             </p>
                         
                         </motion.div>

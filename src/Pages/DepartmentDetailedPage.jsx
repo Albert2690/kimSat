@@ -75,7 +75,7 @@ function DepartmentDetailedPage() {
     <h1 className="text-4xl mt-10 text-secondaryColor text-center font-bold mb-8">{heading}</h1>
     <div className="flex justify-center">
       <div className="w-full md:w-3/4 mt-10 h-[500px] overflow-y-auto custom-scrollbar p-8">
-        {/* <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center mx-auto">
+        <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center mx-auto">
           {doctors.map((doctor, index) => (
             <Link to={`/doctor-details/${doctor.id}`} key={index}>
               <div className="card cursor-pointer mx-auto">
@@ -91,9 +91,9 @@ function DepartmentDetailedPage() {
               </div>
             </Link>
           ))}
-        </div> */}
+        </div>
 
-<div className="container flex flex-wrap gap-11 justify-center items-center mx-auto">
+{/* <div className="container flex flex-wrap gap-11 justify-center items-center mx-auto">
   {doctors.map((doctor, index) => (
     <Link to={`/doctor-details/${doctor.id}`} key={index}>
       <div className="card cursor-pointer mx-auto">
@@ -109,7 +109,7 @@ function DepartmentDetailedPage() {
       </div>
     </Link>
   ))}
-</div>
+</div> */}
 
       </div>
     </div>

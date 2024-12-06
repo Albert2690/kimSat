@@ -128,7 +128,7 @@ function Contact() {
             </li>
             <li className="mb-4">
               <i className="fas fa-map-marker-alt p-3 rounded-full bg-thirdColor hover:bg-secondaryColor mr-2"></i>
-              <span className="font-semibold">Locate Us</span>: Multi speciality hospital, Kollam
+              <span className="font-semibold">Locate Us</span>: Super speciality hospital, Kollam
             </li>
           </ul>
           <button

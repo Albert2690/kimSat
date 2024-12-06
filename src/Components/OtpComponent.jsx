@@ -98,12 +98,13 @@ export default function OtpComponent({ otp, setOtp }) {
           localStorage.setItem("userToken", otpResponse.data.token.access);
         }
         setOtp(Array(4).fill(""));
+        setShowOTP(false)
         navigate("/patient-profile");
       } else {
         toast.error(otpResponse.data.error);
       }
     } catch (error) {
-      toast.error("Internal server occurred");
+      toast.error(error.response.data.error)
       console.error("Error verifying OTP:", error);
     }
   };
@@ -122,10 +123,13 @@ export default function OtpComponent({ otp, setOtp }) {
         startTimer(); // Restart timer
         toast.success("OTP resent successfully");
       } else {
+        console.log('helooooi')
         toast.error(response.data.error);
       }
     } catch (err) {
-      toast.error("Internal Server Error");
+      toast.error(err.response.data.error)
+      console.log(err.message,'errorrr')
+     
     }
   };
 

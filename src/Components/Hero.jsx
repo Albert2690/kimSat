@@ -7,6 +7,7 @@ import Doctorimage3 from '../assets/images/P PRATHAPAN KIMSAT.jpg';
 import backgroundImage from '../assets/images/01-02.png';
 import Loader from './Loader/Loader';
 import apiInstance from '../Api';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [active, setActive] = useState(2);
@@ -151,7 +152,7 @@ const Hero = () => {
         }}
       >
         <h1 className='hero-title font-bold text-3xl sm:text-6xl'>Our Heroes</h1>
-        <div className="slider">
+        <div className="slider ">
           {doctors.map((doctor, index) => (
             <div
               key={index}
@@ -160,13 +161,27 @@ const Hero = () => {
               onTouchEnd={handleTouchEnd}
               onDragStart={handleDragStart}
               onDragEnd={handleDragEnd}
-              className={`item ${active === index ? 'active' : ''} cursor-pointer`}
+              className={`item ${active === index ? 'active' : ''} cursor-pointer bg-gradient-to-br from-[#8E2DE2]  to-[#ca2b0c]`}
               draggable
             >
-              <img src={doctor.photo} alt={doctor.name} />
+              <img src={doctor.photo} alt={doctor.name} className='rounded-lg' />
               <div className="flex mt-7 flex-col   text-center ">
-              <h1 className='text-thirdColor text-lg font-bold'>{doctor.user.username}</h1>
-              <p className='text-thirdColor text-sm font-semibold'>{doctor.specialization[0].name}</p>
+                <Link to={`/doctor-details/${doctor.id}`}>
+                <h1 className='text-thirdColor text-lg font-bold'
+                
+                style={{
+                  color: '#FFFFFF', // White text for name
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                }}>{`Dr. ${doctor.user.username}`}</h1>
+                <p className='text-thirdColor text-sm font-semibold'
+                 style={{
+                  color: '#FFFFFF', // Gold text for specialization
+                  fontSize: '14px',
+                  fontWeight: '600',
+                }}>{doctor.specialization[0].name}</p>
+                </Link>
+             
               </div>
              
               {/* .join(', ')} */}

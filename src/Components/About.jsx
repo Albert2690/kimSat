@@ -20,10 +20,10 @@ function About() {
           <h1 className="text-3xl md:text-5xl font-bold text-headingColor">About Us</h1>
           <h2 className="text-2xl md:text-3xl font-bold text-secondaryColor mt-4">The Best</h2>
           <h3 className="text-xl md:text-2xl font-medium text-textColor mt-2">
-            Multi Speciality Hospital In Kadakkal
+            Super Speciality Hospital In Kadakkal
           </h3>
           <p className="para mt-4">
-            The institution stands with a vision to offer advanced medical care to people in all walks of life at an affordable cost. KIMSAT will soon be among the best multi-specialty co-operative hospitals in Kerala. The hospital will offer the best in patient care supported by technologically advanced healthcare facilities.
+            The institution stands with a vision to offer advanced medical care to people in all walks of life at an affordable cost. KIMSAT will soon be among the best super specialty co-operative hospitals in Kerala. The hospital will offer the best in patient care supported by technologically advanced healthcare facilities.
           </p>
         </motion.div>
         <motion.div 

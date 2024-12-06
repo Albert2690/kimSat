@@ -18,6 +18,7 @@ import DoctorImage7 from '../../assets/images/DR. MOHAMMED HUSSAIN.jpg'
 import DoctorImage8 from '../../assets/images/Dr. v midhun president.jpg'
 import DoctorImage9 from '../../assets/images/jayapalan.jpg'
 import DoctorImage10 from '../../assets/images/suresh s pillai.jpg'
+import DoctorImage12 from '../../assets/images/adv prabhulaghosh.jpg'
 import DoctorImage11 from '../../assets/images/r latha.jpg'
 
 
@@ -35,20 +36,20 @@ import DefaultImage from '../../assets/images/pngegg.png'
 
 const members = [
   { name: "S. VIKRAMAN", title: "Chairman" ,img:DoctorImage6},
-  { name: "DR. V. MIDHUN", title: "President SCRI",img:DoctorImage8 },
-  { name: "P. Ashokan", title: "Secratary",img:DoctorImage3 },
-  { name: "P. PRATHAPAN", title: "Vice President SCRI",img:DoctorImage2 },
-  { name: "ADV. T.S. PRABHULLA KHOSH", title: "",img:DefaultImage },
+  { name: "DR. V. MIDHUN", title: "President of KSCB",img:DoctorImage8 },
+  { name: "P. ASOKAN", title: "Secretary",img:DoctorImage3 },
+  { name: "P. PRATHAPAN", title: "Vice President of KSCB",img:DoctorImage2 },
+  { name: "ADV. T.S. PRABHULLA KHOSH", title: "",img:DoctorImage12 },
   { name: "SHIBU KADAKKAL", title: "",img:DoctorImage1 },
   { name: "N.R. ANI", title: "",img:DoctorImage5 },
   { name: "R. LATHA", title: "" ,img:DoctorImage11},
-  { name: "JAYAPALAN", title: "",img:DoctorImage9 },
+  { name: "E.V JAYAPALAN", title: "",img:DoctorImage9 },
   // { name: "DR. SURESH S. PILLAI", title: "" ,img:DefaultImage},
 ];
 const GoverningBody = [
  
-  { name: "Rajesh", title: "Admin Officer",img:DoctorImage4 },
-  { name: "Dr. Mohammed Hussain", title: "Medical Suprent",img:DoctorImage7 },
+  { name: "RAJESH R", title: "Admin Officer",img:DoctorImage4 },
+  { name: "Dr. MOHAMMED HUSSAIN", title: "Medical Superintendent",img:DoctorImage7 },
 
 ];
 const TiltCard = ({ Icon, title, description }) => {
@@ -217,7 +218,7 @@ const About3 = () => {
  </div>
  <div className="p-4 text-center">
    <h2 className="text-xl font-semibold text-headingColor">
-   DR. SURESH S. PILLAI
+   Dr. SURESH S. PILLAI
    </h2>
  
  </div>

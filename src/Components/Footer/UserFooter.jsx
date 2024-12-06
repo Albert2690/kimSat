@@ -9,6 +9,15 @@ import {
 
 import arrowRight from '../../assets/Png Icons/Group 99.png'
 
+//  
+// 
+//   
+//  
+//   
+// 
+//  
+//  .
+
 
 function UserFooter() {
   return (
@@ -31,27 +40,43 @@ function UserFooter() {
 //     </div>
 //    </footer>
 <footer id='footer' className="  bg-purple-50   p-5  sm:p-16">
-<div className="grid grid-cols-1 sm:grid-cols-3 items-center justify-center mb-6">
-    <div className="mb-4 md:mb-0">
-        <p className="text-textColor text-sm sm:text-lg font-bold">For Appointments</p>
-        <p className="text-sm sm:text-lg text-headingColor font-bold">+91 7510992035 | +91 4742982035</p>
+<div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-6">
+  {/* For Appointments Section */}
+  <div className="flex-1 text-start">
+    <p className="text-textColor text-lg font-bold lg:text-center">For Appointments</p>
+    <div className="mt-2 text-sm lg:text-lg text-center text-headingColor font-bold">
+      <p>0474-2982035 | 0474-2981985 | 0474-2651200</p>
+      <p>0474-2651201 | 0474-2651202 | 0474-2651203</p>
+      <p>0474-2651204 | 0474-2651205 |  0474-2651206</p>
+      {/* <p>+91 7510992035 | +91 4742982035</p> */}
     </div>
-    <div className="mb-4 md:mb-0">
-        <p className="text-textColor font-bold text-sm sm:text-lg">Emergency</p>
-        <p className="text-sm sm:text-lg text-headingColor font-bold">+91 4742982035</p>
+  </div>
+
+  {/* Emergency Section */}
+  <div className="flex-1 text-start">
+    <p className="text-textColor text-lg font-bold lg:text-center">Emergency</p>
+    <div className="mt-2 text-sm lg:text-lg text-center text-headingColor font-bold">
+      <p>+91 735 679 2035</p>
     </div>
-    <div>
-        <p className="text-textColor text-sm sm:text-lg  font-bold">Patient Enquiries</p>
-        <p className="text-sm sm:text-lg text-headingColor font-bold">kimsatcare@gmail.com</p>
+  </div>
+
+  {/* For Enquiries Section */}
+  <div className="flex-1 text-start">
+    <p className="text-textColor text-lg font-bold lg:text-center">For Enquiries</p>
+    <div className="mt-2 text-sm lg:text-lg text-center text-headingColor font-bold">
+      <p>kimsatcare@gmail.com</p>
     </div>
+  </div>
 </div>
+
+
 <hr className="border-t-2 border-secondaryColor  mb-6" />
 <div className="flex flex-col md:flex-row justify-between">
     <div className="w-full md:w-1/3 mb-6 md:mb-0">
         <img src={kimsatLogo} alt="Kimsat Hospital Logo" className="mb-4 w-[100px] h-[40px]" />
         {/* <h1 className="text-2xl font-bold text-red-600">KIMSAT HOSPITAL</h1> */}
         <p className="mt-4 sm:max-w-[300px] text-textColor text-sm font-semibold leading-5 text-justify">
-            The institution stands with a vision to offer advanced medical care to people in all walks of life at an affordable cost. KIMSAT will soon be among the best multi-specialty co-operative hospitals in Kerala.
+            The institution stands with a vision to offer advanced medical care to people in all walks of life at an affordable cost. KIMSAT will soon be among the best super specialty co-operative hospitals in Kerala.
         </p>
         <div className=" mt-6 flex flex-row gap-5">
             <p className="font-bold text-headingColor">Follow Us On</p>

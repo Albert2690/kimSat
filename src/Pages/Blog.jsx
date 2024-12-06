@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import StoryImage from '../assets/images/Gallery6.png';
-import KimsatImage from '../assets/images/2024-02-19.jpg';
+import KimsatImage from '../assets/images/blogg.jpg';
+import KimsatImage2 from '../assets/images/phonesizeblog.jpg';
 import StoryImage1 from '../assets/images/2023-05-17.jpg';
 import apiInstance from '../Api';
 
@@ -48,9 +49,24 @@ function Blog() {
     return (
         <>
             <section className=''>
-                <div className="flex justify-center">
-                    <img src={KimsatImage} alt="" className='sm:w-screen sm:h-[450px] w-full h-[300px] object-cover' />
-                </div>
+            <div className="relative flex justify-center">
+  <picture>
+    {/* Use responsive images for better performance */}
+    <source media="(min-width: 640px)" srcSet={KimsatImage} />
+    <img 
+      src={KimsatImage2} 
+      alt="Doctor banner" 
+      className="w-full object-cover" 
+    />
+  </picture>
+  {/* Overlay content */}
+  <div className="absolute hidden sm:block top-1/2 left-20 transform -translate-y-1/2">
+    <h1 className="text-4xl sm:text-8xl font-bold text-secondaryColor">
+      Blogs
+    </h1>
+  </div>
+</div>
+
             </section>
             <div className="p-8 sm:p-16">
                 <h1 className="text-5xl font-bold text-secondaryColor my-8">Our Stories</h1>
