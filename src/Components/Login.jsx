@@ -103,7 +103,7 @@ function Login() {
                         
                           <div className='flex flex-row justify-center'>
                           <span className="text-textColor text-xl mt-3">+91</span>  
-                          <input type="number" onChange={(e)=>setMobile(e.target.value)} placeholder ="Enter your mobile " className="border rounded-lg  p-2 border-textColor ml-2 min-w-[300px] text-sm sm:text-lg outline-none" />
+                          <input type="number" onChange={(e)=>setMobile(e.target.value)} placeholder ="Enter your mobile number " className="border rounded-lg  p-2 border-textColor ml-2 min-w-[300px] text-sm sm:text-lg outline-none" />
                           </div>
                        
                          <button type='submit' className="mt-6  bg-secondaryColor text-white py-2 px-3 w-[200px] rounded-lg">Get OTP</button>

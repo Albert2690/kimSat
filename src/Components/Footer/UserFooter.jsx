@@ -70,7 +70,7 @@ function UserFooter() {
 </div>
 
 
-<hr className="border-t-2 border-secondaryColor  mb-6" />
+<hr className="border-t-2 border-secondaryColor w-full  mb-6" />
 <div className="flex flex-col md:flex-row justify-between">
     <div className="w-full md:w-1/3 mb-6 md:mb-0">
         <img src={kimsatLogo} alt="Kimsat Hospital Logo" className="mb-4 w-[100px] h-[40px]" />
@@ -110,7 +110,7 @@ function UserFooter() {
         </ul>
     </div>
     <div className="w-full md:w-1/3">
-        <h2 className="text-xl text-headingColor font-bold mb-4">kimsatcare Address</h2>
+        <h2 className="text-xl text-headingColor font-bold mb-4">kimsat Address</h2>
         <p className="text-textColor font-semibold ">
             Subsidiary of Kadakkal Service Co-Operative Bank,<br />
             Govindamangalam, Kadakkal,<br />
@@ -134,7 +134,7 @@ function UserFooter() {
 
 
 <div>
-<p>© 2024 kimsatcare. All Rights Reserved | Crafted by Innodots Innovations Pvt Ltd</p>
+<p>© 2024 kimsat. All Rights Reserved | Crafted by Innodots Innovations Pvt Ltd</p>
     <p className="mt-2">
         <a href="#" className="text-textColor font-semibold ">Privacy Policy</a> | <a href="#" className="text-textColor font-semibold ">Terms of use</a>
     </p>

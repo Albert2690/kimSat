@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import KimsatBanner1 from '../assets/images/home dialysis.jpg';
-import KimsatBanner2 from '../assets/images/home hospital.jpg';
-import KimsatBanner4 from '../assets/images/home banner template (1).jpg';
-import mobileViewBanner1 from '../assets/images/phonesizehomebanner2.jpg';
-import mobileViewBanner2 from '../assets/images/phonesizehomebanner3.jpg';
-import mobileViewBanner3 from '../assets/images/phonesizebanner1 (2).jpg';
+import KimsatBanner1 from '../assets/images/home hospital.jpg';
+import KimsatBanner2 from '../assets/images/home dialysis.jpg';
+import KimsatBanner4 from '../assets/images/homebannermedicep.jpg';
+import mobileViewBanner1 from '../assets/images/phonesizehomebanner3.jpg';
+import mobileViewBanner2 from '../assets/images/phonesizehomebanner2.jpg';
+import mobileViewBanner3 from '../assets/images/phonesizebanner1.jpg';
 // "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\phonesizehomebanner2.jpg"
 // "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\phonesizehomebanner3.jpg"
 // "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\phonesizebanner1 (2).jpg"

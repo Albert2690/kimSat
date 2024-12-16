@@ -36,7 +36,10 @@ const facilities = [
   { name: "Operation Theatre (OT)", icon: faHeart },
   { name: "NEO NATAL ICU (Intensive Care Unit)", icon: faHospital },
   { name: "SICU & Post-Operative Ward", icon: faProcedures },
+  { name: "MICU", icon: faHeart },
+  { name: "PICU", icon: faHeart },
   { name: "CCU (Coronary Care Unit)", icon: faHeart },
+ 
 ];
 
 function FacilitiesModal() {

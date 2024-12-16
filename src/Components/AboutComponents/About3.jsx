@@ -36,7 +36,7 @@ import DefaultImage from '../../assets/images/pngegg.png'
 
 const members = [
   { name: "S. VIKRAMAN", title: "Chairman" ,img:DoctorImage6},
-  { name: "DR. V. MIDHUN", title: "President of KSCB",img:DoctorImage8 },
+  { name: "Dr. V. MIDHUN", title: "President of KSCB",img:DoctorImage8 },
   { name: "P. ASOKAN", title: "Secretary",img:DoctorImage3 },
   { name: "P. PRATHAPAN", title: "Vice President of KSCB",img:DoctorImage2 },
   { name: "ADV. T.S. PRABHULLA KHOSH", title: "",img:DoctorImage12 },
@@ -181,7 +181,7 @@ const About3 = () => {
           {members.map((member, index) => (
             <div
               key={index}
-              className=" mx-auto bg-white rounded-lg shadow-md overflow-hidden relative hover:bg-gray-50 transition-all duration-300"
+              className=" mx-auto bg-white hover:transform hover:scale-110 duration-300 rounded-lg shadow-md overflow-hidden relative hover:bg-gray-50 transition-all "
             >
               <div className="relative group">
                 <img
@@ -189,7 +189,7 @@ const About3 = () => {
                   src={member.img}
                   alt="Portrait of a person in a suit"
                 />
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                {/* <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div> */}
               </div>
               <div className="p-4 text-center">
                 <h2 className="text-xl font-semibold text-headingColor">
@@ -206,7 +206,7 @@ const About3 = () => {
       
 <div
  
- className=" mx-auto mt-10 bg-white rounded-lg shadow-md overflow-hidden relative hover:bg-gray-50 transition-all duration-300"
+ className=" mx-auto mt-10 bg-white hover:transform hover:scale-110 duration-300 rounded-lg shadow-md overflow-hidden relative hover:bg-gray-50 transition-all "
 >
  <div className="relative group">
    <img
@@ -214,7 +214,7 @@ const About3 = () => {
      src={DoctorImage10}
      alt="Portrait of a person in a suit"
    />
-   <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+   {/* <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div> */}
  </div>
  <div className="p-4 text-center">
    <h2 className="text-xl font-semibold text-headingColor">

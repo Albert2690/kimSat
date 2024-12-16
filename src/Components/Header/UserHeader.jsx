@@ -5,6 +5,7 @@ import kimsatLogo from "../../assets/Kimsat Logo/KIMSAT FINAL LOGO-2.png";
 // import kimsatLogo from '../../assets/Kimsat Logo/—Pngtree—white instagram icon png instagram_3562066.png';
 import DepartmentModal from "../DepartmentModal";
 import { IoMdArrowDropdown } from "react-icons/io";
+import apiInstance from "../../Api";
 import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -38,11 +39,12 @@ import {
   faPhone, // Import the login and right arrow icons
 } from "@fortawesome/free-solid-svg-icons";
 import Login from "../Login";
-import apiInstance from "../../Api";
 import { toast } from "react-toastify";
 
 function UserHeader() {
   const [login, setLogin] = useState(false);
+
+
   const navigate = useNavigate();
 
   const { showBooking, setShowBooking, showLogin, setShowLogin, setShowOtp } =
@@ -52,9 +54,28 @@ function UserHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [facility, setModalOpenFacility] = useState(false);
+  const [malayalamNews,setMalayalamNews] = useState([])
+  const [englishNews,setEnglishNews] = useState([])
 
   // Calculate header height for offset
   const [headerHeight, setHeaderHeight] = useState(0);
+
+  const handleApi =async()=>{
+    try{
+      const response = await apiInstance.get('/latest-news/')
+      if(response.data.success){
+        setMalayalamNews(response.data.data.malayalam || [])
+        setEnglishNews(response.data.data.english || [])
+      }
+    }catch(err){
+      console.log(err)
+    }
+  }
+
+  useEffect(()=>{
+handleApi()
+
+  },[])
 
   useEffect(() => {
     let token = localStorage.getItem("userToken");
@@ -97,6 +118,8 @@ function UserHeader() {
       }
     }, 0);
   };
+
+  console.log(englishNews,'englishh')
 
   const handleDepartmentsHover = () => {
     if (!isSmallScreen) {
@@ -170,12 +193,9 @@ function UserHeader() {
             <marquee direction="">
               <div className="flex flex-row items-center">
               <p style={{ wordSpacing: '5px' }} className="text-[14px]  leading-5">
-                കിംസാറ്റ് ആശുപത്രിയിലും. </p>
+              {malayalamNews.length>0 && malayalamNews} </p>
 
-                <p style={{ fontFamily: 'Poppins', wordSpacing: '1px' }} className="text-[18px] ml-6 font-medium">   MEDISEP, the Kerala government's
-                comprehensive insurance scheme for government employees,
-                dependents and pensioners, is now available at Kimsat Hospital
-                as well.</p>
+                <p style={{ fontFamily: 'Poppins', wordSpacing: '1px' }} className="text-[18px] ml-6 font-medium">{englishNews.length>0 && englishNews}</p>
               </div>
             
                 

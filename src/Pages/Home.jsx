@@ -17,10 +17,27 @@ function Home() {
   const [login, setLogin] = useState(false);
   const [tab, setTab] = useState('malayalam');
   const [departments, setDepartments] = useState([]); 
-    const [text, setText] = useState(
-      'സർക്കാർ ജീവനക്കാർക്കും, ആശ്രിതർക്കും പെൻഷൻകാർക്കുമുള്ള കേരള സർക്കാരിന്റെ സമഗ്ര ഇൻഷൂറൻസ് പദ്ധതിയായ മെഡിസെപ്പ് ഇപ്പോൾ കിംസാറ്റ് ആശുപത്രിയിലും. MEDISEP, the Kerala government\'s comprehensive insurance scheme for government employees, dependents and pensioners, is now available at Kimsat Hospital as well.'
-    );
+  const [malayalamNews,setMalayalamNews] = useState([])
+  const [englishNews,setEnglishNews] = useState([])
 
+  // Calculate header height for offset
+
+  const handleApi =async()=>{
+    try{
+      const response = await apiInstance.get('/latest-news/')
+      if(response.data.success){
+        setMalayalamNews(response.data.data.malayalam || [])
+        setEnglishNews(response.data.data.english || [])
+      }
+    }catch(err){
+      console.log(err)
+    }
+  }
+
+  useEffect(()=>{
+handleApi()
+
+  },[])
   const marqueeRef = useRef(null);
   const [duration, setDuration] = useState(10); // Default duration
 
@@ -57,7 +74,7 @@ function Home() {
     setTimeout(() => {
       calculateDuration();
     }, 100); 
-  }, [text]);
+  }, [englishNews]);
 
   useEffect(() => {
     window.scrollTo(0, {
@@ -93,12 +110,9 @@ function Home() {
             <marquee  direction="">
             <div className="flex flex-row items-center">
             <p style={{ wordSpacing: '5px' }} className="text-[14px]  leading-5">
-                കിംസാറ്റ് ആശുപത്രിയിലും. </p>
+               {malayalamNews.length>0 &&  malayalamNews} </p>
 
-                <p style={{ fontFamily: 'Poppins', wordSpacing: '1px' }} className="text-[18px] ml-6 font-medium">   MEDISEP, the Kerala government's
-                comprehensive insurance scheme for government employees,
-                dependents and pensioners, is now available at Kimsat Hospital
-                as well.</p>
+                <p style={{ fontFamily: 'Poppins', wordSpacing: '1px' }} className="text-[18px] ml-6 font-medium"> {englishNews.length>0 &&  englishNews}</p>
                 </div>
            </marquee>
               </span>

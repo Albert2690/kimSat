@@ -31,7 +31,7 @@ function DepartmentPage() {
 
   return (
     <>
-      <section className="mt-0  sm:mt-[-20px]">
+      <section className="mt-0 bg-purple-50   sm:mt-[-20px]">
         {/* <div className="relative flex justify-center"> */}
         {/* <div className="relative w-full h-screen">
     <img src={DepartmentPageImage} alt="" className='sm:w-screen sm:h-screen ' />
@@ -47,10 +47,13 @@ function DepartmentPage() {
         </div>
         {/* <h2 className='absolute top-1/2 left-1/4 text-8xl text-white font-bold z-10'>Departments</h2> */}
         {/* </div> */}
-      </section>
+     
       <div className="p-5 mt-[-20px] sm:p-16 ">
         <Department1 departments={departments} />
       </div>
+      </section>
+<hr className="border-t-2 border-secondaryColor " />
+
     </>
   );
 }

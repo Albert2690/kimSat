@@ -53,7 +53,7 @@ function BookingOtp() {
                          <BookingOtpComponent otp={otp} setOtp={setOtp}/>
                      
                  </div>
-                 <p className="text-xs text-redColor mt-4">Powered by Kimsat Hospital</p>
+                 <p className="text-xs text-redColor mt-4">Powered by Innodots Innovations</p>
              </motion.div>
                  </div>
                </motion.div>

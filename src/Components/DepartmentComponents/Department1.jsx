@@ -68,7 +68,7 @@ function Department1({departments}) {
     
   return (
    
-                <div className="  mx-auto py-12">
+                <div className="   mx-auto py-12">
                     <h1 className="text-4xl sm:text-6xl font-bold text-secondaryColor text-center mb-12">Our Departments</h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {departments.map((dept, index) => (

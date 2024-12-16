@@ -83,10 +83,12 @@ function BookingPage() {
     //   newError.firstName = "Please enter your name.";
     //   isValid = false;
     // }
-    if (!emailRegex.test(formData.email)) {
+    if (formData.email && !emailRegex.test(formData.email)) {
       newError.email = "Please enter a valid email address.";
+      console.log('email failed')
       isValid = false;
     }
+    
 
     // if (appointmentDate < currentDate || formData.appointmentDate==='') {
     //   newError.appointmentDate = 'Please enter a valid date.';
@@ -319,7 +321,7 @@ console.log(doctor,'doctor from booking page ')
                       className="block text-sm font-medium text-secondaryColor"
                     >
                       Email
-                      <span className="text-redColor">*</span>
+                      {/* <span className="text-redColor">*</span> */}
                     </label>
                     <input
                       onChange={handleChange}
