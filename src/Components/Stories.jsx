@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom'
-import StoryImage from '../assets/images/Gallery6.png';
-import StoryImage1 from '../assets/images/2023-05-17.jpg';
+// import StoryImage from '../assets/images/Gallery6.png';
+// import StoryImage1 from '../assets/images/2023-05-17.jpg';
 import apiInstance from '../Api';
 // import { Link } from 'react-router-dom';
 import './Stories.css';
@@ -76,12 +76,17 @@ function Stories() {
       apicall();
   }, []);
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextStory();
-    }, 3000); 
+let interval
+    if(stories.length>0){
+     
+       interval = setInterval(() => {
+        nextStory();
+      }, 3000); 
+    }
+   
 
     return () => clearInterval(interval);
-  }, [currentStartIndex]);
+  }, );
 
   const nextStory = () => {
     setCurrentStartIndex((prevIndex) => {

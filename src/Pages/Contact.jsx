@@ -108,6 +108,8 @@ function Contact() {
   };
 
   return (
+    <>
+
     <div
       className="bg-cover bg-center min-h-screen flex items-center justify-center relative"
       style={{ backgroundImage: `url(${KimsatImage})` }}
@@ -226,10 +228,24 @@ function Contact() {
           </form>
         </div>
       </div>
-
+     
       {/* Toast Container for bottom center positioning */}
       {/* <ToastContainer position="bottom-center" /> */}
     </div>
+
+    <div className="bg-gray-200 w-full h-screen">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.710330319713!2d76.9189407747779!3d8.813260291239724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05dbdbcda8977b%3A0x52b7009d2433dcd2!2sKIMSAT%20Hospital!5e0!3m2!1sen!2sin!4v1737965467672!5m2!1sen!2sin"
+    className="w-full h-full"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
+
+    
+    </>
   );
 }
 

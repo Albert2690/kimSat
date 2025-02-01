@@ -10,6 +10,7 @@ import OtpVerification from '../Components/OtpVerification'
 import BookingOtp from '../Components/BookingOtp'
 import BookingButton from '../Components/Scroll/BookingButton'
 import PhoneComponent from '../Components/Scroll/PhoneComponent'
+import SideComponent from '../Components/Scroll/SideContact'
 // import Loader from '../Components/Loader/Loader'
 
 export const  BookingContext = createContext()
@@ -32,13 +33,13 @@ const [showBookingOTP,setShowBookingOTP] = useState(false)
     <main className=' relative mt-[80px] sm:mt-[160px]' >
       <UserRouter /> 
       <Login/>
-      <ScrollComponents/>
+      {/* <ScrollComponents/> */}
       <BookingButton/>
       <ChatRedirect/>
       <BookingOtp/>
       <OtpVerification />
-      <PhoneComponent/>
-
+      {/* <PhoneComponent/> */}
+<SideComponent/>
       {/* <Loader/> */}
 
     </main>

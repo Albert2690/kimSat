@@ -19,7 +19,7 @@ function ChatRedirect() {
       window.open(whatsappUrl, '_blank');
     }
   return (
-    <div className='flex flex-col gap-5 fixed bottom-7 right-4'>
+    <div className='flex flex-col gap-5 fixed bottom-20 right-4'>
     <motion.div
   
       className="relative flex items-center"

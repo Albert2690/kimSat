@@ -1,4 +1,4 @@
-import React, { useState,useContext,useEffect } from 'react';
+import  { useState,useContext,useEffect } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserDoctor, } from "@fortawesome/free-solid-svg-icons";
 import { motion } from 'framer-motion';
@@ -6,12 +6,13 @@ import { useNavigate } from 'react-router-dom';
 import { BookingContext } from '../../Layouts/Layout';
 
 function BookingButton() {
-  const [isHovered, setIsHovered] = useState(false); // To track hover state
+  const [isHovered,setIsHovered] = useState(false); // To track hover state
   const navigate = useNavigate()
 
   const [headerHeight, setHeaderHeight] = useState(0);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [facility, setModalOpenFacility] = useState(false);
+
 
 
 
@@ -31,8 +32,8 @@ function BookingButton() {
   }, [navigate,]);
 
 
-  const { showBooking, setShowBooking, showLogin, setShowLogin, setShowOtp } =
-    useContext(BookingContext);
+  const {  setShowBooking,  } =    useContext(BookingContext); 
+    
 
 
 
@@ -57,7 +58,7 @@ function BookingButton() {
   };
 
   return (
-    <div onClick={handleScrollToBooking} className='flex flex-col gap-5 z-20 fixed bottom-24 right-4'>
+    <div onClick={handleScrollToBooking} className='flex  flex-col gap-5 z-20 fixed bottom-36 right-4'>
       <motion.div
         className="relative flex items-center"
         onHoverStart={() => setIsHovered(true)}  // Set hover state to true

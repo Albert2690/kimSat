@@ -3,13 +3,15 @@ import { Link, useParams } from "react-router-dom";
 import "./DepartmentDetialedPage.css"; // Ensure you have the correct file name here
 import DepartmentDetialed3 from "../Components/DepartmentComponents/DepartmentDetialed3";
 import DepartmentBanner from "../assets/images/cardiology.jpg";
+import CommonGallery from "../Components/CommonGallery";
+import image1 from '../assets/images/Rectangle 36-3.png'
 import apiInstance from "../Api";
 // import { Link } from 'react-router-dom';
 const defaultDoctorImage = "https://via.placeholder.com/150"; // Default image for doctors
 
 function DepartmentDetailedPage() {
   const { name } = useParams();
-
+  const [images] = useState([image1,image1,image1,image1,image1,image1])
   console.log(name, "deaprtmen-detialt");
   const [department, setDepartment] = useState(null); // Initialize as null
   const [doctors, setDoctors] = useState([]);
@@ -135,6 +137,8 @@ function DepartmentDetailedPage() {
           </div>
           {/* Additional Component */}
           <DepartmentDetialed3 cards={cards} />
+
+          <CommonGallery page={department?.name} Images={images} />
         </div>
       ) : (
         <div>

@@ -13,3 +13,88 @@
     background-color: #f0f0f0; 
     border-radius: 2px;
 }
+
+.oval-shape {
+    position: absolute;
+    bottom: 10px; /* Distance from the bottom */
+    right: 10px;  /* Distance from the right */
+    width: 200px;  /* Width of the oval */
+    height: 100px; /* Height of the oval */
+    background-color: #4CAF50;  /* Change to your desired color */
+    border-radius: 50%;  /* Make it oval */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for effect */
+  }
+  
+  /* Container for the Inverted L shape */
+.inverted-l-container {
+    position: fixed; /* Keep it in place even when the page scrolls */
+    bottom: 10px;    /* Distance from the bottom of the page */
+    right: 10px;     /* Distance from the right of the page */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  /* Vertical line (bottom to top) */
+  .inverted-l-line.vertical {
+    width: 10px;
+    height: 100px;
+    background-color: #4CAF50; /* Change to desired color */
+  }
+  
+  /* Horizontal line (right to left) */
+  .inverted-l-line.horizontal {
+    width: 80px;
+    height: 10px;
+    background-color: #4CAF50; /* Same color for both parts */
+    margin-top: 10px;
+  }
+  
+  /* Contact number */
+  .contact-number {
+    margin-top: 10px;
+    text-align: center;
+    color: #333; /* Change to desired text color */
+    font-size: 16px;
+  }
+  
+  .contact-number strong {
+    color: #4CAF50; /* Contact number in a highlighted color */
+  }
+
+  /* Wrapper for the entire Stories section */
+.stories-wrapper {
+    position: relative;
+    padding-bottom: 50px; /* Provide some bottom space for the curve */
+  }
+  
+  /* Curved shape at the bottom of the page */
+  .curved-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e2e8f0; /* bg-gray-400 color */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Hide any overflow */
+  }
+  
+  /* Create the curved border with border-radius */
+  .curved-shape {
+    width: 100%;
+    height: 50px;
+    background-color: #e2e8f0;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    margin-top: 10px; /* Optional: for spacing */
+  }
+  
+  /* Optional styling for the content inside the curved section */
+  .curved-bottom p {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  
