@@ -1,10 +1,10 @@
 import  { useEffect, useState } from 'react';
-import KimsatBanner1 from '../assets/images/IMG_5098.jpg';
+import KimsatBanner1 from '../assets/images/IMG_5098.JPG';
 
 import KimsatBanner2 from '../assets/images/home dialysis.jpg';
 import KimsatBanner4 from '../assets/images/homebannermedicep.jpg';
 import mobileViewBanner1 from '../assets/images/phonesizehomebanner3.jpg';
-import mobileViewBanner2 from '../assets/images/IMG_5102.jpg';
+import mobileViewBanner2 from '../assets/images/IMG_5102.JPG';
 import mobileViewBanner3 from '../assets/images/phonesizebanner1.jpg';
 
 // "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\phonesizehomebanner2.jpg"
