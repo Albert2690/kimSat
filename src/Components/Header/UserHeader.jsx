@@ -217,10 +217,10 @@ handleApi()
                  -
               </h2> */}
               <a
-                href="tel:+91 7356792035"
+                href="tel:+91 474 298 2035"
                 className="text-redColor font-semibold"
               >
-                735 679 2035
+                474 298 2035
               </a>
             </div>
           </div>

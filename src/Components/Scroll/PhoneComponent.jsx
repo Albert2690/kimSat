@@ -19,7 +19,7 @@ function PhoneComponent() {
     >
       {/* The Button */}
       <motion.button
-      onClick={()=>window.location.href= 'tel:+91 735 679 2035'}
+      onClick={()=>window.location.href= 'tel:+91 7510992035'}
         className="bg-thirdColor hover:bg-secondaryColor text-white p-3 rounded-full flex space-x-2 items-center group transition-all duration-300 ease-in-out shadow-lg"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

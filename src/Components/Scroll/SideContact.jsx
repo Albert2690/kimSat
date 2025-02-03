@@ -3,14 +3,13 @@ import { useState, useEffect } from "react";
 
 function BottomContactBar() {
   const phoneDetails = [
-    { id: 1, text: "Customer Support", number: "735 679 2035" },
+    { id: 1, text: "Customer Support", number: "474 265 1200" },
     { id: 2, text: "Emergency Services", number: "735 679 2035" },
-    { id: 3, text: "General Inquiries", number: "735 679 2035" },
+    { id: 3, text: "General Inquiries", number: "751 099 2035" },
   ];
 
   const [highlightIndex, setHighlightIndex] = useState(0);
 
-  // Animation for cycling through highlighted numbers
   useEffect(() => {
     const interval = setInterval(() => {
       setHighlightIndex((prevIndex) => (prevIndex + 1) % phoneDetails.length);
@@ -23,19 +22,20 @@ function BottomContactBar() {
     <div className="fixed bottom-0 w-full bg-secondaryColor text-white py-2 shadow-lg z-50">
       <div className="flex justify-around items-center">
         {phoneDetails.map((detail, index) => (
-          <motion.div
+          <motion.a
             key={detail.id}
+            href={`tel:+91${detail.number}`} // Clicking will open dialer
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             whileHover={{ scale: 1.05 }}
-            className={`text-center  px-4 border-l ${
-              index === highlightIndex ? "text-white font-bold" : "text-gray-200"
+            className={`text-center px-4 border-l transition-all duration-300 ${
+              index === highlightIndex ? "text-white font-bold" : "text-gray-300"
             }`}
           >
-            <p className="text-xs font-semibold sm:text-sm">{detail.text}</p>
-            <p className="text-xs sm:text-lg">{detail.number}</p>
-          </motion.div>
+            <p className="text-[10px] sm:text-sm font-medium tracking-wide">{detail.text}</p>
+            <p className="text-sm sm:text-lg font-semibold">📞{detail.number}</p>
+          </motion.a>
         ))}
       </div>
     </div>

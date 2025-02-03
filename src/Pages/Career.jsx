@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import Career3 from '../Components/Careers/Career3'
 import CareerImage from '../assets/images/covid19-preventing-virus-health-healthcare-workers-quarantine-concept-professional-female-nurse-doctor-blue-scrubs-medical-mask-gloves-writing-down-patient-info-using-clipboard.jpg'
+// frontend/src/assets/images/
 import Career2 from '../Components/Careers/Career2'
 import Career4 from '../Components/Careers/Career4'
 import apiInstance from '../Api'

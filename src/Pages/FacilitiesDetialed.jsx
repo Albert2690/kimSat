@@ -1,10 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import apiInstance from "../Api";
-import KimsatImage from "../assets/images/2023-08-07.jpg";
+// import KimsatImage from "../assets/images/2023-08-07.jpg";
 import CommonGallery from "../Components/CommonGallery";
-import image1 from '../assets/images/Rectangle 36-3.png'
-import image2 from '../assets/images/WhatsApp Image 2024-10-02 at 11.29.28 AM.jpeg'
+// import image1 from '../assets/images/Rectangle 36-3.png'
+// import image2 from '../assets/images/WhatsApp Image 2024-10-02 at 11.29.28 AM.jpeg'
 
 // frontend/src/assets/images/
 
@@ -16,7 +17,7 @@ function FacilitiesDetialed() {
   console.log(name, "name facility  ! ");
   const [department, setDepartment] = useState(null); // Initialize as null
   const [doctors, setDoctors] = useState([]);
-    const [images] = useState([image1,image2,image1,image2,image1,image2])
+    // const [images,setImages] = useState([])
   
   const [cards, setCards] = useState([]);
 
@@ -29,6 +30,7 @@ function FacilitiesDetialed() {
         const response = await apiInstance.get(`/facilities/c/${name}/`);
         if (response.data.success) {
           setDepartment(response.data.data);
+          setImages(response.data.images)
           // setDoctors(response.data.department_details.doctors);
           // setCards(response.data.department_details.card);
         } else {
@@ -41,19 +43,10 @@ function FacilitiesDetialed() {
     handleApi();
   }, [name]);
 
-  const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const handlePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
+  // console.log(images,'imageee')
+
 
   console.log(department?.bullet_points, "bulllet");
   return (
@@ -70,9 +63,18 @@ function FacilitiesDetialed() {
       <div className=" p-5  sm:p-16 flex flex-col items-center sm:flex-row">
         <div className="p-8 md:p-16 sm:w-3/4 w-full">
           <div className=" mx-auto bg-white ">
-            <h1 className="text-3xl md:text-4xl text-headingColor font-bold mb-4 md:mb-6">
+            {/* <h1 className="text-3xl md:text-4xl text-headingColor font-bold mb-4 md:mb-6">
               {department?.heading}
-            </h1>
+            </h1> */}
+            <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl sm:text-4xl font-extrabold tracking-wide  mb-4 md:mb-6 text-secondaryColor font-serif"
+        >
+          {department?.heading}
+        </motion.h2>
             <p className="text-textColor text-justify mb-4 md:mb-6">
               {department?.paragraph1}
             </p>
@@ -129,7 +131,8 @@ function FacilitiesDetialed() {
         </div>
 
       </div>
-      <CommonGallery page={department?.heading} Images={images} />
+      {department?.images?.length>0 && <CommonGallery page={department?.heading} Images={department?.images} /> }
+      
 
     </>
   );

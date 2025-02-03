@@ -138,7 +138,7 @@ function DepartmentDetailedPage() {
           {/* Additional Component */}
           <DepartmentDetialed3 cards={cards} />
 
-          <CommonGallery page={department?.name} Images={images} />
+          {department?.images?.length>0 && <CommonGallery page={department?.heading} Images={department?.images} /> }
         </div>
       ) : (
         <div>

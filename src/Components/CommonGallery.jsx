@@ -1,12 +1,16 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { motion } from "framer-motion";
 
-function CommonGallery({ page, Images }) {
+function CommonGallery({ page, Images=[] }) {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
 
   const NextArrow = ({ onClick }) => (
     <button
@@ -43,19 +47,62 @@ function CommonGallery({ page, Images }) {
       { breakpoint: 1024, settings: { slidesToShow: Math.min(Images?.length, 2) } },
       { breakpoint: 768, settings: { dots: false, slidesToShow: Math.min(Images?.length, 1) } },
     ],
-    dotsClass: "slick-dots",
   };
 
-  // Close modal when clicking outside the image
-  const handleModalClose = (e) => {
-    if (e.target.classList.contains("modal-backdrop")) {
-      setSelectedImage(null);
-    }
+  const handleMouseDown = (e) => {
+    if (e.target === e.currentTarget) return;
+    setIsDragging(true);
+    setStartPos({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y
+    });
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    setPosition({
+      x: e.clientX - startPos.x,
+      y: e.clientY - startPos.y
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleTouchStart = (e) => {
+    if (e.target === e.currentTarget) return;
+    const touch = e.touches[0];
+    setIsDragging(true);
+    setStartPos({
+      x: touch.clientX - position.x,
+      y: touch.clientY - position.y
+    });
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const touch = e.touches[0];
+    setPosition({
+      x: touch.clientX - startPos.x,
+      y: touch.clientY - startPos.y
+    });
+  };
+
+  const handleImageClick = (image, e) => {
+    e.stopPropagation();
+    setSelectedImage(image);
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+    setPosition({ x: 0, y: 0 });
+    setIsDragging(false);
   };
 
   return (
     <div className="bg-white p-6 sm:p-16">
-      {/* Title */}
       <div className="text-center mb-6 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -68,20 +115,12 @@ function CommonGallery({ page, Images }) {
         </motion.h2>
       </div>
 
-      {/* Image Slider */}
       <div className="relative mt-14">
         <style>
           {`
-            .slick-dots {
-              bottom: -40px;
-            }
-            .slick-dots li {
-              margin: 0 4px;
-            }
-            .slick-dots li button {
-              width: 8px;
-              height: 8px;
-            }
+            .slick-dots { bottom: -40px; }
+            .slick-dots li { margin: 0 4px; }
+            .slick-dots li button { width: 8px; height: 8px; }
             .slick-dots li button:before {
               content: '';
               width: 8px;
@@ -92,60 +131,83 @@ function CommonGallery({ page, Images }) {
               transition: all 0.3s ease;
             }
             .slick-dots li.slick-active button:before {
-              background: #F59E0B;
+              background: #7A5299;
               transform: scale(1.2);
             }
-            .slick-track {
-              margin-left: 0;
+            .lightbox-image {
+              cursor: move;
+              max-width: none;
+              max-height: none;
+              user-select: none;
             }
-            .slick-slide {
-              padding: 0 12px;
+            .lightbox-overlay {
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: rgba(0, 0, 0, 0.9);
+              z-index: 50;
             }
           `}
         </style>
+
         <Slider {...settings} className="custom-slider">
           {Images?.map((image, index) => (
             <motion.div
               key={index}
               className="relative cursor-pointer w-full max-w-sm bg-white rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02]"
               whileHover={{ scale: 1.03 }}
-              onClick={() => setSelectedImage(image)}
+              onClick={(e) => handleImageClick(image.url, e)}
             >
-              <div className="relative h-80 w-full overflow-hidden rounded-lg">
+              <div className="aspect-w-1 aspect-h-1">
                 <img
-                  src={image}
+                  src={image.url}
                   alt={`Gallery image ${index + 1}`}
-                  className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                  className="h-full w-full object-cover object-center rounded-lg"
                 />
               </div>
             </motion.div>
           ))}
         </Slider>
-      </div>
 
-      {/* Full-Screen Image Modal */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[9999] modal-backdrop px-4"
-          onClick={handleModalClose}
-          onTouchEnd={handleModalClose}
-        >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative  flex justify-center items-center p-2"
+        {selectedImage && (
+          <div 
+            className="fixed inset-0 bg-black/90 z-50"
+            onClick={closeLightbox}
           >
-            <img
-              src={selectedImage}
-              alt="Expanded view"
-              className="max-w-full max-h-[80vh] sm:max-h-[70vh] sm:max-w-[80vw] object-contain rounded-lg shadow-xl"
-              onClick={(e) => e.stopPropagation()}
-              onTouchEnd={(e) => e.stopPropagation()}
-            />
-          </motion.div>
-        </div>
-      )}
+            <button 
+              className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
+              onClick={closeLightbox}
+            >
+              <X className="w-6 h-6 text-white" />
+            </button>
+            
+            <div 
+              className="absolute inset-0 overflow-hidden"
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleMouseUp}
+            >
+              <div className="absolute inset-0 flex items-center justify-center">
+                <img
+                  src={selectedImage}
+                  alt="Lightbox view"
+                  className="max-h-full max-w-full object-contain"
+                  style={{
+                    transform: `translate(${position.x}px, ${position.y}px)`,
+                    cursor: isDragging ? 'grabbing' : 'grab'
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -49,9 +49,9 @@ function DoctorDetailsPage() {
   const formatTime = (time) => {
     if (!time) return 'N/A';
     const [hours, minutes] = time.split(':');
-    const period = hours >= 12 ? 'PM' : 'AM';
+    // const period = hours >= 12 ? 'PM' : 'AM';
     const formattedHours = hours % 12 || 12;
-    return `${formattedHours}:${minutes} ${period}`;
+    return `${formattedHours}:${minutes} `;
   };
 
   if (!isValidId) {
@@ -62,7 +62,7 @@ function DoctorDetailsPage() {
     <div className="mx-auto bg-white shadow-sm">
       <div className="flex bg-[#F8F8F8] p-5 sm:p-16 gap-5 flex-col md:flex-row">
         <div className='flex justify-center'>
-        <img src={doctor?.photo} alt="Doctor" className='w-[200px] h-[200px] rounded-flg object-cover' />
+        <img src={doctor?.photo} alt="Doctor" className='sm:w-[250px] sm:h-[200px] w-[300px] h-[300px] rounded-lg object-cover' />
         </div>
         <div className="text-center ml-0 sm:ml-10 sm:flex sm:flex-row md:justify-start sm:gap-16 sm:items-end w-full md:text-left md:mt-0">
           <div>
@@ -101,7 +101,7 @@ function DoctorDetailsPage() {
               {['Overview', 'Qualification', 'Work Experience', 'Schedule'].map((tabName) => (
                 <li
                   key={tabName}
-                  className={`cursor-pointer p-4 ${tab === tabName ? 'bg-[#F8F8F8] font-bold text-headingColor' : 'text-textColor'}`}
+                  className={`cursor-pointer p-4 ${tab === tabName ? 'bg-[#F8F8F8] text-start font-bold text-headingColor' : ' text-start text-textColor'}`}
                   onClick={() => setTab(tabName)}
                 >
                   {tabName}
@@ -154,7 +154,7 @@ function DoctorDetailsPage() {
 
             {tab === 'Work Experience' && (
               <div>
-                <h1 className="text-xl font-semibold mb-4">Work Experience</h1>
+                <h1 className="text-xl  font-semibold mb-4">Work Experience</h1>
                 {doctor?.work_experiences?.length > 0 ? (
                   doctor.work_experiences.map((item, index) => (
                     <motion.div
@@ -193,34 +193,36 @@ function DoctorDetailsPage() {
     </h2>
     
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {doctor?.schedules?.map((schedule, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ delay: index * 0.1 }}
-          className="p-6 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 group"
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-full bg-secondaryColor bg-opacity-10 flex items-center justify-center group-hover:bg-secondaryColor transition-all duration-300">
-              <h3 className="font-bold text-secondaryColor group-hover:text-white">
-                {schedule.day_of_week.slice(0, 2)}
-              </h3>
-            </div>
-            <div>
-              <h3 className="font-semibold text-headingColor text-lg">
-                {schedule.day_of_week}
-              </h3>
-              <p className="text-sm text-textColor">Available Slots</p>
-            </div>
-          </div>
+      {doctor?.schedules?.map((schedule, index) => {
+        // Extracting the first and last time slots
+        const startTime = schedule?.time_slots[0]?.[0] || "N/A";
+        const endTime = schedule?.time_slots[schedule.time_slots?.length - 1]?.[0] || "N/A";
 
-          <div className="space-y-3">
-            {schedule.time_slots.map((slot, slotIndex) => (
-              <div 
-                key={slotIndex}
-                className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all duration-300"
-              >
+        return (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className="p-6 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 group"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full bg-secondaryColor bg-opacity-10 flex items-center justify-center group-hover:bg-secondaryColor transition-all duration-300">
+                <h3 className="font-bold text-secondaryColor group-hover:text-white">
+                  {schedule?.day_of_week?.slice(0, 2)}
+                </h3>
+              </div>
+              <div>
+                <h3 className="font-semibold text-headingColor text-lg">
+                  {schedule.day_of_week}
+                </h3>
+                <p className="text-sm text-textColor">Available Slots</p>
+              </div>
+            </div>
+
+            {/* Displaying time range properly */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all duration-300">
                 <div className="w-2 h-2 bg-secondaryColor rounded-full animate-pulse"></div>
                 <div className="flex items-center gap-2">
                   <FontAwesomeIcon 
@@ -228,17 +230,18 @@ function DoctorDetailsPage() {
                     className="text-secondaryColor text-sm"
                   />
                   <p className="text-textColor font-medium">
-                    {formatTime(slot[0])}
+                    {formatTime(startTime)} - {formatTime(endTime)}
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </motion.div>
-      ))}
+            </div>
+          </motion.div>
+        );
+      })}
     </div>
   </motion.div>
 )}
+
           </div>
         </div>
       </div>
