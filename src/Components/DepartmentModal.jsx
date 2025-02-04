@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 // Updated departments with correct FontAwesome icons
 const departments = [
-  { name: "Emergency Medicine(Casualty)", icon: faAmbulance },
+  { name: "Accident & Emergency Medicine(Casualty)", icon: faAmbulance },
   { name: "General Medicine", icon: faNotesMedical },
   { name: "Laparoscopic and General Surgery", icon: faCut },
   { name: "Orthopaedics", icon: faBone },

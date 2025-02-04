@@ -1,11 +1,16 @@
 import  { useEffect, useState } from 'react';
-import KimsatBanner1 from '../assets/images/IMG_5098.JPG';
+import KimsatBanner1 from '../assets/images/IMG_5148.PNG';
+import KimsatBanner3 from '../assets/images/home hospital.jpg';
 
+// frontend/src/assets/images/IMG_5148.PNG
 import KimsatBanner2 from '../assets/images/home dialysis.jpg';
 import KimsatBanner4 from '../assets/images/homebannermedicep.jpg';
 import mobileViewBanner1 from '../assets/images/phonesizehomebanner3.jpg';
-import mobileViewBanner2 from '../assets/images/IMG_5102.JPG';
+import mobileViewBanner2 from '../assets/images/IMG_5152.JPG';
 import mobileViewBanner3 from '../assets/images/phonesizebanner1.jpg';
+import mobileViewBanner4 from '../assets/images/phonesizehomebanner2.jpg';
+
+
 
 // "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\phonesizehomebanner2.jpg"
 // "C:\Users\user\OneDrive\Desktop\kimSat\frontend\src\assets\images\phonesizehomebanner3.jpg"
@@ -16,8 +21,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function HomeBanner() {
-  const desktopImages = [KimsatBanner1, KimsatBanner2, KimsatBanner4];
-  const mobileImages = [mobileViewBanner2,mobileViewBanner1,  mobileViewBanner3];
+  const desktopImages = [KimsatBanner1,KimsatBanner3, KimsatBanner2, KimsatBanner4];
+  const mobileImages = [mobileViewBanner2,mobileViewBanner4,mobileViewBanner1,  mobileViewBanner3];
 
   const [activeIndex, setActiveIndex] = useState(1);
   const [transition, setTransition] = useState(true);
