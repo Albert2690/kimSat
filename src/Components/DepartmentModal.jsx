@@ -1,9 +1,11 @@
-import React from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
   faAppleAlt, faStethoscope, faPills, faHandSparkles, faSyringe, 
   faHeartbeat, faLungs, faBone, faXRay, faBrain, faVial, faVenus, 
-  faFlask, faAmbulance, faDumbbell, faNotesMedical, faDna, faMale, faCut, faChild, faMicroscope 
+  faFlask, faAmbulance, faDumbbell, faNotesMedical, faDna, faMale, faCut, faChild, faMicroscope, 
+  faTooth,
+  faBedPulse
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 
@@ -15,7 +17,7 @@ const departments = [
   { name: "Orthopaedics", icon: faBone },
   { name: "Pulmonology", icon: faLungs },
   { name: "ENT", icon: faStethoscope },
-  { name: "Nephrology", icon: faVial },
+  { name: "Nephrology", icon: faBedPulse },
   { name: "Neurology", icon: faBrain },
   { name: "Neurosurgery", icon: faBrain },
   { name: "Pediatrics", icon: faChild },
@@ -27,6 +29,13 @@ const departments = [
   { name: "Urology and Andrology", icon: faMale },
   { name: "Pathology", icon: faMicroscope },
   { name: "Radiology", icon: faXRay },
+  { name: "Psychiatry", icon: faBrain },
+  { name: "Dentistry", icon: faTooth },
+
+  
+
+
+  
 
 
   { name: "Clinical Nutrition", icon: faAppleAlt },
